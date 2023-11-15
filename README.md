@@ -1,2 +1,2 @@
 # vba-cs
-VBA based Craziness Scheduler
+VBA based Craze Scheduler
