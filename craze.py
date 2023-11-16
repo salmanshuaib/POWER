@@ -29,7 +29,7 @@ def is_time_to_execute(scheduled_time):
 
 # Function to read actions from the 'actions' file
 def read_actions():
-    with open('actions', 'r') as actions_file:
+    with open('actions.txt', 'r') as actions_file:
         actions = actions_file.read().splitlines()
     return actions
 
