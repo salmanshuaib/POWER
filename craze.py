@@ -29,14 +29,14 @@ def is_time_to_execute(scheduled_time):
 
 # Function to read actions from the 'actions' file
 def read_actions():
-    with open('actions.txt', 'r') as actions_file:
-        actions = actions_file.read().splitlines()
-    return actions
+    with open('actions', 'r') as action_file:
+        action = action_file.read().splitlines()
+    return action
 
 # Function to count the number of YES answers
 def count_yes_answers():
     yes_count = 0
-    for i, task in enumerate(actions):
+    for i, task in enumerate(action):
         question = f"Did you complete TASK{i + 1}: 1/0?"
         user_input = input(question)
         if user_input == "1":
@@ -44,7 +44,7 @@ def count_yes_answers():
     return yes_count
 
 # Read actions from the 'actions' file
-actions = read_actions()
+action = read_actions()
 
 # Read scheduled tasks from 'Scheduler.csv' and store them in a list of tuples
 scheduled_tasks = []
@@ -59,13 +59,13 @@ with open('Scheduler.csv', newline='') as csvfile:
 # Check if it's time to execute each task
 for task, time_range in scheduled_tasks:
     while not is_time_to_execute(time_range):
-        time.sleep(60)  # Sleep for a minute before checking again
+        time.sleep(25)  # Sleep for 25 seconds before checking again
 
     # Beep to notify the user
     winsound.Beep(1000, 1000)  # Beep for 1 second
 
     # Ask the question and count YES answers
     yes_count = count_yes_answers()
-    print(f"Task {task}: You answered YES {yes_count} times out of {len(actions)}")
+    print(f"Task {task}: You answered YES {yes_count} times out of {len(action)}")
 
 print("All tasks completed!")

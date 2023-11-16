@@ -1,2 +1,2 @@
 # vba-cs
-VBA based Craze Scheduler
+Python based Craze Scheduler
