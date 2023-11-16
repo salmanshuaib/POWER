@@ -6,9 +6,11 @@ import winsound  # For Windows systems, for beeping
 # Function to parse the time format in Scheduler.csv and convert it to a datetime object
 def parse_time(time_str):
     try:
-        time_format = "%H%M hours"
+        # Remove "hours" and spaces from the time string
+        time_str = time_str.replace(" hours", "").replace(" ", "")
+        time_format = "%H%M"
         if "to" in time_str:
-            time_parts = time_str.split(" to ")
+            time_parts = time_str.split("to")
             start_time = datetime.datetime.strptime(time_parts[0], time_format)
             end_time = datetime.datetime.strptime(time_parts[1], time_format)
             return start_time, end_time
@@ -27,7 +29,7 @@ def is_time_to_execute(scheduled_time):
 
 # Function to read actions from the 'actions' file
 def read_actions():
-    with open('actions.txt', 'r') as actions_file:
+    with open('actions', 'r') as actions_file:
         actions = actions_file.read().splitlines()
     return actions
 
