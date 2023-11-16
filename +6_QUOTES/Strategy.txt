@@ -1,0 +1,45 @@
+-> C: Please specify a program which is based on Python and:-
++ Takes in put from the user at specific points in the 'day'; such that the program ought beep at that time of onset (i.e. the program should beep when it is ready to take input based 
+on times specified in a file named Scheduler.csv).
++ Matches the input, e.g. in answer to the question: "Did you complete TASK1: 1/0?"
++ If the user enters: 1; it counts as a YES.
++ After the end of the program - that is, after all the questions (actions) listed in Scheduler.csv have been asked; the program marks the user out of the total number of actions listed 
+in Scheduler.csv.
+
+HERE ARE THE TWO FILES:
+
+FILE: Scheduler.csv
+TASK,TIME
+1,0400 hours to 0500 hours
+2,0500 hours
+3,0531 hours to 0600 hours
+4,0700 hours
+5,0643 hours
+6,1000 hours to 0600 hours
+7,0800 hours to 1100 hours
+8,1122 hours to 1222 hours
+9,1300 hoursto 1600 hours
+10,1423 hours
+11,1631 hours to 1752 hours
+12,1800 hours to 1922 hours
+13,1930 hours to 2133 hours
+14,2143 hours
+15,2200 hours to 0400 hours
+
+
+FILE: actions
+Learn with the aim to gaining a Certificate
+Cold Shower
+Shave
+Coding
+101Pushups; 1+10+2 Somersaults
+No solid food from 0500h to 1800h
+Exercise [Situps, Weights, Yoqi /OR/: SPORTS] 
+Running
+Errands
+101Pushups; 1+10+2 Somersaults
+Coding
+Practical Skills leading to Certification
+Meditation
+101Pushups; 1+10+2 Somersaults
+Bedtime
