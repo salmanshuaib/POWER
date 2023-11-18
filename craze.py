@@ -11,11 +11,12 @@ def parse_time(time_str):
         time_format = "%H%M"
         if "to" in time_str:
             time_parts = time_str.split("to")
-            start_time = datetime.datetime.strptime(time_parts[0], time_format)
-            end_time = datetime.datetime.strptime(time_parts[1], time_format)
+            start_time = datetime.datetime(2023, 1, 1, int(time_parts[0][:2]), int(time_parts[0][2:]))
+            end_time = datetime.datetime(2023, 1, 1, int(time_parts[1][:2]), int(time_parts[1][2:]))
             return start_time, end_time
         else:
-            return datetime.datetime.strptime(time_str, time_format)
+            time_obj = datetime.datetime(2023, 1, 1, int(time_str[:2]), int(time_str[2:]))
+            return time_obj
     except ValueError:
         raise ValueError(f"Invalid time format: {time_str}")
 
@@ -23,7 +24,9 @@ def parse_time(time_str):
 def is_time_to_execute(scheduled_time):
     current_time = datetime.datetime.now().time()
     if isinstance(scheduled_time, tuple):
-        return scheduled_time[0].time() <= current_time <= scheduled_time[1].time()
+        start_time, end_time = scheduled_time
+        current_datetime = datetime.datetime.now()
+        return start_time.time() <= current_time <= end_time.time() and start_time <= current_datetime <= end_time
     else:
         return scheduled_time.time() == current_time
 
@@ -45,24 +48,29 @@ def count_yes_answers():
 
 # Read tasks from the 'tasks' file
 tasks = read_tasks()
+print("Tasks:", tasks)  # Debugging statement
 
 # Read scheduled tasks from 'Scheduler.csv' and store them in a list of tuples
 scheduled_tasks = []
 with open('Scheduler.csv', newline='') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
-        task = row['Task']
-        time_range = row['Time']
+        task = row['TASK']  # Updated here to lowercase 'task'
+        time_range = row['TIME']
         time_range = parse_time(time_range)
         scheduled_tasks.append((task, time_range))
+
+print("Scheduled Tasks:", scheduled_tasks)  # Debugging statement
 
 # Check if it's time to execute each task
 for task, time_range in scheduled_tasks:
     while not is_time_to_execute(time_range):
-        time.sleep(22)  # Sleep for 22 seconds before checking again
+        print("Waiting for the scheduled time...")  # Debugging statement
+        time.sleep(22)  # Sleep for 20 seconds before checking again
 
     # Beep to notify the user
     winsound.Beep(1000, 1000)  # Beep for 1 second
+    print("Beeped!")  # Debugging statement
 
     # Ask the question and count YES answers
     yes_count = count_yes_answers()
