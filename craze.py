@@ -81,8 +81,8 @@ for task, time_range in scheduled_tasks:
     winsound.Beep(1000, 1000)  # Beep for 1 second
     print("Beeped!")  # Debugging statement
 
-    # Ask the question and count YES answers
-    yes_count = count_yes_answers()
-    print(f"Task {task}: You answered YES {yes_count} times out of {len(tasks)}")
+# Ask the question and count YES answers
+yes_count = count_yes_answers()    
 
-print("All tasks completed!")
+print(f"Task {task}: You answered YES {yes_count} times out of {len(tasks)}")
+print("Finito!")
