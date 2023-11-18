@@ -3,6 +3,14 @@ import datetime
 import time
 import winsound  # For Windows systems, for beeping
 
+import datetime
+
+# Get today's date
+current_date = datetime.date.today()
+
+# Print the present day
+print("Present day:", current_date)
+
 # Function to parse the time format in Scheduler.csv and convert it to a datetime object
 def parse_time(time_str):
     try:
@@ -11,14 +19,15 @@ def parse_time(time_str):
         time_format = "%H%M"
         if "to" in time_str:
             time_parts = time_str.split("to")
-            start_time = datetime.datetime(2023, 1, 1, int(time_parts[0][:2]), int(time_parts[0][2:]))
-            end_time = datetime.datetime(2023, 1, 1, int(time_parts[1][:2]), int(time_parts[1][2:]))
+            start_time = datetime.datetime.combine(current_date, datetime.time(int(time_parts[0][:2]), int(time_parts[0][2:])))
+            end_time = datetime.datetime.combine(current_date, datetime.time(int(time_parts[1][:2]), int(time_parts[1][2:])))
             return start_time, end_time
         else:
-            time_obj = datetime.datetime(2023, 1, 1, int(time_str[:2]), int(time_str[2:]))
+            time_obj = datetime.datetime.combine(current_date, datetime.time(int(time_str[:2]), int(time_str[2:])))
             return time_obj
     except ValueError:
         raise ValueError(f"Invalid time format: {time_str}")
+
 
 # Function to check if the current time matches the scheduled time
 def is_time_to_execute(scheduled_time):
@@ -66,7 +75,7 @@ print("Scheduled Tasks:", scheduled_tasks)  # Debugging statement
 for task, time_range in scheduled_tasks:
     while not is_time_to_execute(time_range):
         print("Waiting for the scheduled time...")  # Debugging statement
-        time.sleep(22)  # Sleep for 20 seconds before checking again
+        time.sleep(22)  # Sleep for 22 seconds before checking again
 
     # Beep to notify the user
     winsound.Beep(1000, 1000)  # Beep for 1 second
