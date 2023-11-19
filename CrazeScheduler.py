@@ -3,8 +3,6 @@ import datetime
 import time
 import winsound  # For Windows systems, for beeping
 
-import datetime
-
 # Get today's date
 current_date = datetime.date.today()
 
@@ -21,13 +19,17 @@ def parse_time(time_str):
             time_parts = time_str.split("to")
             start_time = datetime.datetime.combine(current_date, datetime.time(int(time_parts[0][:2]), int(time_parts[0][2:])))
             end_time = datetime.datetime.combine(current_date, datetime.time(int(time_parts[1][:2]), int(time_parts[1][2:])))
+            
+            # Check if the end time is before the start time, indicating a time period crossing midnight
+            if end_time < start_time:
+                end_time += datetime.timedelta(days=1)  # Add one day to end_time
+                
             return start_time, end_time
         else:
             time_obj = datetime.datetime.combine(current_date, datetime.time(int(time_str[:2]), int(time_str[2:])))
             return time_obj
     except ValueError:
         raise ValueError(f"Invalid time format: {time_str}")
-
 
 # Function to check if the current time matches the scheduled time
 def is_time_to_execute(scheduled_time):
@@ -39,53 +41,45 @@ def is_time_to_execute(scheduled_time):
     else:
         return scheduled_time.time() == current_time
 
-# Function to read tasks from the 'tasks' file
-def read_tasks():
-    with open('TaskList', 'r') as tasks_file:
-        tasks = tasks_file.read().splitlines()
-    return tasks
+# Function to read hours from the 'hours' file
+def read_hours():
+    with open('HourList', 'r') as hours_file:
+        hours = hours_file.read().splitlines()
+    return hours
 
-# Function to count the number of YES answers
-'''def count_yes_answers():
-    yes_count = 0
-    for i, task in enumerate(tasks):
-        question = f"Did you complete TASK{i + 1}: 1/0?"
-        user_input = input(question)
-        if user_input == "1":
-            yes_count += 1
-    return yes_count
-'''
-    
-# Read tasks from the 'tasks' file
-tasks = read_tasks()
-print("Tasks:", tasks)  # Debugging statement
+# Read hours from the 'hours' file
+hours = read_hours()
+print("hours:", hours)  # Debugging statement
 
-# Read scheduled tasks from 'Scheduler.csv' and store them in a list of tuples
-scheduled_tasks = []
+# Read scheduled hours from 'Scheduler.csv' and store them in a list of tuples
+scheduled_hours = []
 with open('Scheduler.csv', newline='') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
-        task = row['TASK']  # Updated here to lowercase 'task'
+        hour = row['HOUR']  # Updated here to lowercase 'hour'
         time_range = row['TIME']
         time_range = parse_time(time_range)
-        scheduled_tasks.append((task, time_range))
+        scheduled_hours.append((hour, time_range))
 
-print("Scheduled Tasks:", scheduled_tasks)  # Debugging statement
+print("Scheduled hours:", scheduled_hours)  # Debugging statement
 
-# Check if it's time to execute each task
-for task, time_range in scheduled_tasks:
+ClassSize = 0  # Initialize ClassSize
+Tasks = []
+iteration = 0
+# Check if it's time to execute each hour
+for hour, time_range in scheduled_hours:
     while not is_time_to_execute(time_range):
         print("Waiting for the scheduled time...")  # Debugging statement
-        time.sleep(22)  # Sleep for 22 seconds before checking again
+        time.sleep(8)  # You have pressed CTRL+C to exit your Constancy routine: Pronoia - the Avatar of your Heart that perpetuates POWER into realizing its UNLIMITED Self! POWER is increasingly resident in your Third Eye as the Avatar of your Sphere Of Consciousness (Anima) and reflects the Light of your Heart into your Mind.
 
     # Beep to notify the user
     winsound.Beep(1000, 1000)  # Beep for 1 second
     print("Beeped!")  # Debugging statement
-
-# Ask the question and count YES answers
-''' yes_count = count_yes_answers()
-'''    
-
-''' print(f"Task {task}: You answered YES {yes_count} times out of {len(tasks)}")
-'''
-print("Finito!")
+    Tests = input("Did you accomplish POWER's Test? Enter 1 for YES, 0 for NO or CTRL+C to EXIT: ") # You have pressed CTRL+C to exit your Constancy routine: Pronoia - the Avatar of your Heart that perpetuates POWER into realizing its UNLIMITED Self! POWER is increasingly resident in your Third Eye as the Avatar of your Sphere Of Consciousness (Anima) and reflects the Light of your Heart into your Mind. Ty: GitHub: CoPilot.
+    Tasks.append(int(Tests))
+    ClassSize = sum(Tasks)
+    print("You have synchronized with", ClassSize, "Hours of POWER out of median: 22 Hours!")
+    iteration = iteration + 1
+        
+print("Grade: ", (ClassSize/22)*100, "%")
+print("finir!")
