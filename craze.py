@@ -46,7 +46,7 @@ def read_tasks():
     return tasks
 
 # Function to count the number of YES answers
-def count_yes_answers():
+'''def count_yes_answers():
     yes_count = 0
     for i, task in enumerate(tasks):
         question = f"Did you complete TASK{i + 1}: 1/0?"
@@ -54,7 +54,8 @@ def count_yes_answers():
         if user_input == "1":
             yes_count += 1
     return yes_count
-
+'''
+    
 # Read tasks from the 'tasks' file
 tasks = read_tasks()
 print("Tasks:", tasks)  # Debugging statement
@@ -82,7 +83,9 @@ for task, time_range in scheduled_tasks:
     print("Beeped!")  # Debugging statement
 
 # Ask the question and count YES answers
-yes_count = count_yes_answers()    
+''' yes_count = count_yes_answers()
+'''    
 
-print(f"Task {task}: You answered YES {yes_count} times out of {len(tasks)}")
+''' print(f"Task {task}: You answered YES {yes_count} times out of {len(tasks)}")
+'''
 print("Finito!")
