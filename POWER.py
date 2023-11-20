@@ -43,7 +43,7 @@ def is_time_to_execute(scheduled_time):
 
 # Function to read hours from the 'hours' file
 def read_hours():
-    with open('HourList', 'r') as hours_file:
+    with open('Energy.txt', 'r') as hours_file:
         hours = hours_file.read().splitlines()
     return hours
 
@@ -51,9 +51,9 @@ def read_hours():
 hours = read_hours()
 print("hours:", hours)  # Debugging statement
 
-# Read scheduled hours from 'Scheduler.csv' and store them in a list of tuples
+# Read scheduled hours from 'time.csv' and store them in a list of tuples
 scheduled_hours = []
-with open('Scheduler.csv', newline='') as csvfile:
+with open('time.csv', newline='') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         hour = row['HOUR']  # Updated here to lowercase 'hour'
