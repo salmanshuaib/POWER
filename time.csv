@@ -1,6 +1,6 @@
 HOUR,TIME
-1,0229 hours to 0459 hours
-2,0235 hours to 0530 hours
+1,0145 hours to 0459 hours
+2,0505 hours to 0530 hours
 3,0535 hours to 0600 hours
 4,0643 hours to 0645 hours
 5,0700 hours to 0800 hours
@@ -11,6 +11,8 @@ HOUR,TIME
 10,1443 hours to 1445 hours
 11,1631 hours to 1752 hours
 12,1800 hours to 1922 hours
-13,1930 hours to 2133 hours
-14,2143 hours to 2145 hours
-15,2200 hours to 0400 hours
+13,1930 hours to 2130 hours
+14,2133 hours to 2133 hours
+15,2143 hours to 2145 hours
+16,2200 hours to 0400 hours
+

@@ -78,8 +78,8 @@ for hour, time_range in scheduled_hours:
     Tests = input("Did you accomplish POWER's Test? Enter 1 for YES, 0 for NO or CTRL+C to EXIT: ") # You have pressed CTRL+C to exit your Constancy routine: Pronoia - the Avatar of your Heart that perpetuates POWER into realizing its UNLIMITED Self! POWER is increasingly resident in your Third Eye as the Avatar of your Sphere Of Consciousness (Anima) and reflects the Light of your Heart into your Mind. Ty: GitHub: CoPilot.
     Tasks.append(int(Tests))
     ClassSize = sum(Tasks)
-    print("You have synchronized with", ClassSize, "Hours of POWER out of median: 22 Hours!")
+    print("You are synchronized with", ClassSize + 8, "Hours of POWER out of median: 24 Hours!")
     iteration = iteration + 1
         
-print("Grade: ", (ClassSize/22)*100, "%")
+print("Grade: ", ((ClassSize+8)/24)*100, "%")
 print("finir!")
