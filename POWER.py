@@ -1,47 +1,60 @@
-import os
 import json
-import csv
-import datetime
+import sched
 import time
-import winsound  # For Windows systems, for beeping
+import winsound
 
-# Get today's date
-current_date = datetime.date.today()
+# Load the JSON data from the 'time.json' file
+with open('time.json', 'r') as json_file:
+    data = json.load(json_file)
 
-# Print the present day
-print("Present day:", current_date)
+# Initialize the tally for 'YES' answers
+yes_count = 0
 
-# Get the directory of the script
-script_dir = os.path.dirname(os.path.abspath(__file__))
+# Create a scheduler
+s = sched.scheduler(time.time, time.sleep)
 
-# Specify the path to config.json inside the "data" directory
-config_file_path = os.path.join(script_dir, 'data', 'time.json')
+# Define a function to beep and prompt the user
+def beep_and_prompt(hour, task):
+    print(f"Time to {task}")
+    winsound.Beep(500, 1000)  # Beep for 1 second (you can adjust frequency and duration)
+    try:
+        user_input = int(input("Did you accomplish POWER's Test? Enter 1 for YES, 0 for NO or CTRL+C to EXIT: "))
+        if user_input == 1:
+            global yes_count
+            yes_count += 1
+    except KeyboardInterrupt:
+        exit()
 
-# Load configuration from time.json
-with open(config_file_path, 'r') as config_file:
-    config = json.load(config_file)
+# Schedule beeping alarms for each specified time range
+for entry in data["scheduled_hours"]:
+    hour = entry["hour"]
+    task = entry["task"]
+    time_range = entry["time_range"].split(" to ")
 
-# Extract scheduled hours from the configuration
-scheduled_hours = config.get("scheduled_hours", [])
+    start_time = time.strptime(time_range[0], "%H%M hours")
+    end_time = time.strptime(time_range[1], "%H%M hours")
 
-# Extract tasks from the configuration
-tasks = config.get("tasks", [])
+    start_time_seconds = start_time.tm_hour * 3600 + start_time.tm_min * 60
+    end_time_seconds = end_time.tm_hour * 3600 + end_time.tm_min * 60
 
-# Function to parse the time format in Scheduler.csv and convert it to a datetime object
-# (Your existing code for parsing time)
+    current_time = time.localtime()
+    current_time_seconds = current_time.tm_hour * 3600 + current_time.tm_min * 60
 
-# Function to check if the current time matches the scheduled time
-# (Your existing code for checking time)
+    if start_time_seconds <= current_time_seconds <= end_time_seconds:
+        delay = 0
+    elif current_time_seconds < start_time_seconds:
+        delay = start_time_seconds - current_time_seconds
+    else:
+        delay = 86400 - current_time_seconds + start_time_seconds  # Handle time wrapping to the next day
 
-ClassSize = 0  # Initialize ClassSize
-Tasks = []
-iteration = 0
+    s.enter(delay, 1, beep_and_prompt, argument=(hour, task))
 
-# Check if it's time to execute each hour
-def is_time_to_execute(time_range):
-    current_time = datetime.datetime.now().time()
-    start_time = datetime.datetime.strptime(time_range[0], "%H:%M").time()
-    end_time = datetime.datetime.strptime(time_range[1], "%H:%M").time()
-    return start_time <= current_time <= end_time
+# Run the scheduler
+print("POWER's Test is starting. Be prepared!")
+try:
+    s.run()
+except KeyboardInterrupt:
+    pass
 
-print("finir!")
+# Print the tally of 'YES' answers
+print(f"POWER's Test completed. Total 'YES' answers: {yes_count}")

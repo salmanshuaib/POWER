@@ -1,0 +1,84 @@
+{
+  "scheduled_hours": [
+      {
+          "hour": "1",
+          "time_range": "0400 hours to 0449 hours",
+          "task": "Learn with the aim to gaining a Certificate"
+      },
+      {
+          "hour": "2",
+          "time_range": "0500 hours to 0530 hours",
+          "task": "Cold Shower"
+      },
+      {
+          "hour": "3",
+          "time_range": "0535 hours to 0600 hours",
+          "task": "Shave"
+      },
+      {
+          "hour": "4",
+          "time_range": "0643 hours to 0645 hours",
+          "task": "Coding"
+      },
+      {
+          "hour": "5",
+          "time_range": "0700 hours to 0800 hours",
+          "task": "101Pushups; 1+10+2 Somersaults"
+      },
+      {
+          "hour": "6",
+          "time_range": "0500 hours to 1800 hours",
+          "task": "No solid food from 0500h to 1800h"
+      },
+      {
+          "hour": "7",
+          "time_range": "0800 hours to 1100 hours",
+          "task": "Exercise [Situps, Weights, Yoqi /OR/: SPORTS]"
+      },
+      {
+          "hour": "8",
+          "time_range": "1122 hours to 1222 hours",
+          "task": "Running"
+      },
+      {
+          "hour": "9",
+          "time_range": "1300 hours to 1600 hours",
+          "task": "Errands"
+      },
+      {
+          "hour": "10",
+          "time_range": "1443 hours to 1445 hours",
+          "task": "101Pushups; 1+10+2 Somersaults"
+      },
+      {
+          "hour": "11",
+          "time_range": "1631 hours to 1752 hours",
+          "task": "Coding"
+      },
+      {
+          "hour": "12",
+          "time_range": "1800 hours to 1922 hours",
+          "task": "Practical Skills leading to Certification"
+      },
+      {
+          "hour": "13",
+          "time_range": "1930 hours to 2130 hours",
+          "task": "Meditation"
+      },
+      {
+          "hour": "14",
+          "time_range": "2133 hours to 2133 hours",
+          "task": "101Pushups; 1+10+2 Somersaults"
+      },
+      {
+          "hour": "15",
+          "time_range": "2143 hours to 2145 hours",
+          "task": "Bedtime"
+      },
+      {
+          "hour": "16",
+          "time_range": "2200 hours to 0400 hours",
+          "task": "Custom task for hour 16"
+      }
+  ]
+}
