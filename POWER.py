@@ -11,7 +11,6 @@ current_date = datetime.date.today()
 # Print the present day
 print("Present day:", current_date)
 
-
 # Get the directory of the script
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
