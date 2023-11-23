@@ -3,7 +3,7 @@
       {
           "hour": "1",
           "time_range": "0400 hours to 0449 hours",
-          "task": "Learn with the aim to gaining a Certificate"
+          "task": "Learn a foreign language with the aim to gaining a Certificate via CONSTANCY"
       },
       {
           "hour": "2",
@@ -16,69 +16,94 @@
           "task": "Shave"
       },
       {
-          "hour": "4",
-          "time_range": "0643 hours to 0645 hours",
-          "task": "Coding"
-      },
+        "hour": "4",
+        "time_range": "0604 hours to 0600 hours",
+        "task": "T + L"
+    },
       {
           "hour": "5",
-          "time_range": "0700 hours to 0800 hours",
+          "time_range": "0643 hours to 0645 hours",
           "task": "101Pushups; 1+10+2 Somersaults"
       },
       {
           "hour": "6",
+          "time_range": "0700 hours to 0800 hours",
+          "task": "Coding"
+      },
+      {
+          "hour": "7",
           "time_range": "0500 hours to 1800 hours",
           "task": "No solid food from 0500h to 1800h"
       },
       {
-          "hour": "7",
+          "hour": "8",
           "time_range": "0800 hours to 1100 hours",
           "task": "Exercise [Situps, Weights, Yoqi /OR/: SPORTS]"
       },
       {
-          "hour": "8",
+          "hour": "9",
           "time_range": "1122 hours to 1222 hours",
           "task": "Running"
       },
       {
-          "hour": "9",
+          "hour": "10",
           "time_range": "1300 hours to 1600 hours",
           "task": "Errands"
       },
       {
-          "hour": "10",
+          "hour": "11",
           "time_range": "1443 hours to 1445 hours",
           "task": "101Pushups; 1+10+2 Somersaults"
       },
       {
-          "hour": "11",
+          "hour": "12",
           "time_range": "1631 hours to 1752 hours",
           "task": "Coding"
       },
       {
-          "hour": "12",
-          "time_range": "1800 hours to 1922 hours",
-          "task": "Practical Skills leading to Certification"
-      },
-      {
           "hour": "13",
-          "time_range": "1930 hours to 2130 hours",
-          "task": "Meditation"
+          "time_range": "1759 hours to 1922 hours",
+          "task": "Read a book to increase Attention and thus RESPECT for others"
       },
       {
           "hour": "14",
-          "time_range": "2133 hours to 2133 hours",
-          "task": "101Pushups; 1+10+2 Somersaults"
+          "time_range": "1930 hours to 2129 hours",
+          "task": "Moksha Meditation"
       },
       {
           "hour": "15",
-          "time_range": "2143 hours to 2145 hours",
-          "task": "Bedtime"
+          "time_range": "2130 hours to 2133 hours",
+          "task": "Traversed rainbow bridge half-way to Kingdom of Heaven"
       },
       {
           "hour": "16",
-          "time_range": "2200 hours to 0400 hours",
-          "task": "Custom task for hour 16"
-      }
+          "time_range": "2143 hours to 2145 hours",
+          "task": "101Pushups; 1+10+2 Somersaults"
+      },
+      {
+          "hour": "17",
+          "time_range": "1600 hours to 1603 hours",
+          "task": "Vitamins 1"
+      },
+      {
+        "hour": "18",
+        "time_range": "0400 hours to 0403 hours",
+        "task": "Vitamins 2"
+    },
+    {
+      "hour": "19",
+      "time_range": "0439 hours to 0442 hours",
+      "task": "Medications 1"
+    },
+    {
+    "hour": "20",
+    "time_range": "2139 hours to 2142 hours",
+    "task": "Medications 2"
+    },  
+    {
+    "hour": "21",
+    "time_range": "2200 hours to 0400 hours",
+    "task": "Bedtime"
+    }
   ]
 }
