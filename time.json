@@ -2,62 +2,62 @@
   "scheduled_hours": [
       {
           "hour": "1",
-          "time_range": "0400 hours to 0449 hours",
+          "time_range": "0359 hours to 0450 hours",
           "task": "Learn a foreign language with the aim to gaining a Certificate via CONSTANCY"
       },
       {
           "hour": "2",
-          "time_range": "0500 hours to 0530 hours",
+          "time_range": "0457 hours to 0520 hours",
           "task": "Cold Shower"
       },
       {
-          "hour": "3",
-          "time_range": "0535 hours to 0600 hours",
+        "hour": "3",
+        "time_range": "0459 hours to 1800 hours",
+        "task": "No solid food from 0459h to 1800h"
+    },
+      {
+          "hour": "4",
+          "time_range": "0534 hours to 0600 hours",
           "task": "Shave"
       },
       {
-        "hour": "4",
-        "time_range": "0604 hours to 0600 hours",
+        "hour": "5",
+        "time_range": "0604 hours to 0607 hours",
         "task": "T + L"
     },
       {
-          "hour": "5",
-          "time_range": "0643 hours to 0645 hours",
+          "hour": "6",
+          "time_range": "0643 hours to 0647 hours",
           "task": "101Pushups; 1+10+2 Somersaults"
       },
       {
-          "hour": "6",
-          "time_range": "0700 hours to 0800 hours",
+          "hour": "7",
+          "time_range": "0659 hours to 0755 hours",
           "task": "Coding"
       },
       {
-          "hour": "7",
-          "time_range": "0500 hours to 1800 hours",
-          "task": "No solid food from 0500h to 1800h"
-      },
-      {
           "hour": "8",
-          "time_range": "0800 hours to 1100 hours",
+          "time_range": "0759 hours to 1100 hours",
           "task": "Exercise [Situps, Weights, Yoqi /OR/: SPORTS]"
       },
       {
           "hour": "9",
-          "time_range": "1122 hours to 1222 hours",
+          "time_range": "1121 hours to 1222 hours",
           "task": "Running"
       },
       {
           "hour": "10",
-          "time_range": "1300 hours to 1600 hours",
+          "time_range": "1259 hours to 1600 hours",
           "task": "Errands"
       },
       {
-          "hour": "11",
-          "time_range": "1443 hours to 1445 hours",
+          "hour": "12",
+          "time_range": "1643 hours to 1647 hours",
           "task": "101Pushups; 1+10+2 Somersaults"
       },
       {
-          "hour": "12",
-          "time_range": "1631 hours to 1752 hours",
+          "hour": "13",
+          "time_range": "1655 hours to 1752 hours",
           "task": "Coding"
       },
       {
@@ -77,18 +77,13 @@
       },
       {
           "hour": "16",
-          "time_range": "2143 hours to 2145 hours",
+          "time_range": "2143 hours to 2147 hours",
           "task": "101Pushups; 1+10+2 Somersaults"
-      },
-      {
-          "hour": "17",
-          "time_range": "1600 hours to 1603 hours",
-          "task": "Vitamins 1"
       },
       {
         "hour": "18",
         "time_range": "0400 hours to 0403 hours",
-        "task": "Vitamins 2"
+        "task": "Vitamins 1 + Vitamins 2"
     },
     {
       "hour": "19",
