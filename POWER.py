@@ -25,27 +25,23 @@ def beep_and_prompt(hour, task):
     except KeyboardInterrupt:
         exit()
 
-# Schedule beeping alarms for each specified time range
+# Schedule beeping alarms for each specified time range using only start times
 for entry in data["scheduled_hours"]:
     hour = entry["hour"]
     task = entry["task"]
     time_range = entry["time_range"].split(" to ")
 
     start_time = time.strptime(time_range[0], "%H%M hours")
-    end_time = time.strptime(time_range[1], "%H%M hours")
-
-    start_time_seconds = start_time.tm_hour * 3600 + start_time.tm_min * 60
-    end_time_seconds = end_time.tm_hour * 3600 + end_time.tm_min * 60
 
     current_time = time.localtime()
     current_time_seconds = current_time.tm_hour * 3600 + current_time.tm_min * 60
 
-    if start_time_seconds <= current_time_seconds <= end_time_seconds:
-        delay = 0
-    elif current_time_seconds < start_time_seconds:
-        delay = start_time_seconds - current_time_seconds
+    start_time_seconds = start_time.tm_hour * 3600 + start_time.tm_min * 60
+
+    if current_time_seconds >= start_time_seconds:
+        delay = 86400 - (current_time_seconds - start_time_seconds)  # Delay to the next occurrence
     else:
-        delay = 86400 - current_time_seconds + start_time_seconds  # Handle time wrapping to the next day
+        delay = start_time_seconds - current_time_seconds
 
     s.enter(delay, 1, beep_and_prompt, argument=(hour, task))
 
