@@ -16,11 +16,6 @@
         "task": "Trim head, cut nails"
       },
       {
-      "hour": "4",
-      "time_range": "0400 hours to 0403 hours",
-      "task": "Vitamins 1"
-      },
-      {
           "hour": "5",
           "time_range": "0534 hours to 0600 hours",
           "task": "Shave face"
@@ -34,6 +29,11 @@
           "hour": "7",
           "time_range": "0643 hours to 0647 hours",
           "task": "101Pushups; 1+10+2 Somersaults"
+      },
+      {
+        "hour": "4",
+        "time_range": "0614 hours to 0618 hours",
+        "task": "Vitamins 1"
       },
       {
           "hour": "8",
