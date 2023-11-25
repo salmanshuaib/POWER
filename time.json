@@ -52,7 +52,7 @@
       },
       {
           "hour": "11",
-          "time_range": "1259 hours to 1600 hours",
+          "time_range": "1259 hours to 1640 hours",
           "task": "Errands"
       },
       {
@@ -88,7 +88,7 @@
       {
         "hour": "18",
         "time_range": "2200 hours to 1800 hours",
-        "task": "No solid food or beverage from 2200h to 1800h"
+        "task": "No solid food from 2200h to 1800h"
       },
       {
       "hour": "19",
