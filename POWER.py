@@ -47,6 +47,12 @@ for entry in data["scheduled_hours"]:
 
 # Run the scheduler
 print("POWER's Test is starting. Be prepared!")
+p = 1
+while p <= 99999:
+    print (".  //Courtesy: Andromeda Ascendant of The Empress Entirety (Avatar of Power):- TAYLOR ALISON SWIFT")
+    time.sleep(1)  # Use time.sleep() to introduce a 1-second delay
+    p += 1
+
 try:
     s.run()
 except KeyboardInterrupt:
