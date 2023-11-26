@@ -102,8 +102,8 @@
       },
     {
         "hour": "21",
-        "time_range": "2200 hours to 1800 hours",
-        "task": "No solid food from 2200h until 1800h: thence can eat Vegetarian until/'avant' 2152h"
+        "time_range": "2200 hours to 1300 hours",
+        "task": "No solid food from 2200h until 1300h"
       },  
     {
       "hour": "22",
