@@ -46,10 +46,10 @@ for entry in data["scheduled_hours"]:
     s.enter(delay, 1, beep_and_prompt, argument=(hour, task))
 
 # Run the scheduler
-print("POWER's Test is starting. Be prepared!")
-p = 1
+print("\033[91mPOWER's Test is starting. Be prepared!\033[0m")
+p = 1  
 while p <= 99999:
-    print (".  //Courtesy: Andromeda Ascendant of The Empress Entirety (Avatar of Power):- TAYLOR ALISON SWIFT")
+    print("\033[95m.  //Courtesy: Andromeda Ascendant of The Empress Entirety: TAYLOR ALISON SWIFT\033[0m")
     time.sleep(1)  # Use time.sleep() to introduce a 1-second delay
     p += 1
 
