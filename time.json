@@ -31,49 +31,49 @@
         "task": "T + L"
         },
     {
-        "hour": "7",
-        "time_range": "0614 hours to 0618 hours",
-        "task": "Vitamins 1"
-    },
-    {
-          "hour": "8",
+          "hour": "7",
           "time_range": "0643 hours to 0647 hours",
           "task": "101Pushups; 1+10+2 Somersaults"
         },
     {
-          "hour": "9",
+          "hour": "8",
           "time_range": "0659 hours to 0755 hours",
           "task": "Coding"
         },
     {
-          "hour": "10",
+          "hour": "9",
           "time_range": "0759 hours to 1100 hours",
           "task": "Exercise [Situps, Weights, Yoqi /OR/: SPORTS]"
         },
     {
-          "hour": "11",
+          "hour": "10",
           "time_range": "1121 hours to 1222 hours",
           "task": "Running"
         },
     {
-          "hour": "12",
-          "time_range": "1259 hours to 1640 hours",
+          "hour": "11",
+          "time_range": "1229 hours to 1640 hours",
           "task": "Errands"
         },
     {
-          "hour": "13",
+          "hour": "12",
           "time_range": "1643 hours to 1647 hours",
           "task": "101Pushups; 1+10+2 Somersaults"
       },
     {
-          "hour": "14",
-          "time_range": "1655 hours to 1752 hours",
+          "hour": "13",
+          "time_range": "1650 hours to 1725 hours",
           "task": "Coding"
       },
     {
-          "hour": "15",
-          "time_range": "1759 hours to 1922 hours",
-          "task": "Read a book to increase Attention and thus Respect for Avatar OF POWER"
+        "hour": "14",
+        "time_range": "1730 hours to 1752 hours",
+        "task": "Read a sacred text as part of MERKABA's AECPM drive: Action Earthing Connection Prayer Meditation"
+        },
+    {
+        "hour": "15",
+        "time_range": "1759 hours to 1922 hours",
+        "task": "Read a book to increase Attention and thus Respect for Avatar OF POWER"
       },
     {
           "hour": "16",
@@ -86,29 +86,29 @@
           "task": "Traversed rainbow bridge half-way to Kingdom of Heaven"
       },
     {
-          "hour": "18",
-          "time_range": "2143 hours to 2147 hours",
-          "task": "101Pushups; 1+10+2 Somersaults"
-      },
+        "hour": "18",
+        "time_range": "2139 hours to 2142 hours",
+        "task": "Medications 2"
+        },  
     {
-      "hour": "19",
-      "time_range": "2139 hours to 2142 hours",
-      "task": "Medications 2"
-      },  
+        "hour": "19",
+        "time_range": "2143 hours to 2147 hours",
+        "task": "101Pushups; 1+10+2 Somersaults"
+        },
     {
-      "hour": "21",
+      "hour": "20",
       "time_range": "2200 hours to 0400 hours",
       "task": "Bedtime"
       },
-      {
-        "hour": "",
+    {
+        "hour": "21",
         "time_range": "2200 hours to 1800 hours",
-        "task": "No solid food from 2200h to 1800h"
+        "task": "No solid food from 2200h until 1800h: thence eat Vegetarian [i n sert French] 1822h"
       },  
     {
       "hour": "22",
-      "time_range": "0059 hours to 0103 hours",
-      "task": "Vitamins 2"
+      "time_range": "2229 hours to 2233 hours",
+      "task": "Vitamins 1 + Vitamins 2  //Christianity"
       }
   ]
 }
