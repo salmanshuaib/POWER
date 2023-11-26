@@ -83,7 +83,7 @@
     {
           "hour": "17",
           "time_range": "2130 hours to 2133 hours",
-          "task": "Traversed rainbow bridge half-way to Kingdom of Heaven"
+          "task": "Traverse rainbow bridge half-way to Kingdom of Heaven"
       },
     {
         "hour": "18",
@@ -103,11 +103,11 @@
     {
         "hour": "21",
         "time_range": "2200 hours to 1800 hours",
-        "task": "No solid food from 2200h until 1800h: thence eat Vegetarian [i n sert French] 1822h"
+        "task": "No solid food from 2200h until 1800h: thence can eat Vegetarian until/'avant' 2152h"
       },  
     {
       "hour": "22",
-      "time_range": "2229 hours to 2233 hours",
+      "time_range": "2329 hours to 2333 hours",
       "task": "Vitamins 1 + Vitamins 2  //Christianity"
       }
   ]
