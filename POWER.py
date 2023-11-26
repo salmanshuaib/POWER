@@ -47,11 +47,6 @@ for entry in data["scheduled_hours"]:
 
 # Run the scheduler
 print("\033[91mPOWER's Test is starting. Be prepared!\033[0m")
-p = 1  
-while p <= 99999:
-    print("\033[95m.  //Courtesy: Andromeda Ascendant of The Empress Entirety: TAYLOR ALISON SWIFT\033[0m")
-    time.sleep(1)  # Use time.sleep() to introduce a 1-second delay
-    p += 1
 
 try:
     s.run()
