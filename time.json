@@ -77,8 +77,8 @@
       },
     {
         "hour": "16",
-        "time_range": "1759 hours to 1822 hours",
-        "task": "Eat"
+        "time_range": "1759 hours to 2200 hours",
+        "task": "Eat during free periods from 1759 hours hence"
       },
     { 
         "hour": "17",
