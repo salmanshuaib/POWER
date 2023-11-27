@@ -60,51 +60,51 @@
           "time_range": "1229 hours to 1545 hours",
           "task": "Errands"
         },
+    {
+          "hour": "13",
+          "time_range": "1443 hours to 1447 hours",
+          "task": "101Pushups; 1+10+2 Somersaults"
+        },
     {   
-        "hour": "13",
+        "hour": "14",
         "time_range": "1550 hours to 1620 hours",
         "task": "Sleep"
     },    
     {
-          "hour": "14",
+          "hour": "15",
           "time_range": "1643 hours to 1647 hours",
           "task": "101Pushups; 1+10+2 Somersaults"
       },
     {
-          "hour": "15",
+          "hour": "16",
           "time_range": "1649 hours to 1750 hours",
           "task": "Coding"
       },
     {
-        "hour": "16",
+        "hour": "17",
         "time_range": "1759 hours to 2200 hours",
         "task": "Eat during free periods from 1759 hours hence"
       },
     { 
-        "hour": "17",
+        "hour": "18",
         "time_range": "1830 hours to 1910 hours" ,
         "task": "Read! It increases Attention: furthering Respect for the OTHER"
     },  
     {
-          "hour": "18",
+          "hour": "19",
           "time_range": "1930 hours to 2129 hours",
           "task": "Moksha Meditation"
       },
     {
-          "hour": "19",
+          "hour": "20",
           "time_range": "2130 hours to 2133 hours",
           "task": "Traverse rainbow bridge half-way to Kingdom of Heaven"
       },
     {
-        "hour": "20",
+        "hour": "21",
         "time_range": "2139 hours to 2142 hours",
         "task": "Medications 2"
         },  
-    {
-        "hour": "21",
-        "time_range": "2143 hours to 2147 hours",
-        "task": "101Pushups; 1+10+2 Somersaults"
-        },
     {
       "hour": "22",
       "time_range": "2200 hours to 2330 hours",
