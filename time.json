@@ -8,7 +8,7 @@
     {
         "hour": "2",
         "time_range": "0329 hours to 0348 hours",
-        "task": "Trim head, cut nails"
+        "task": "Trim head, cut nails, grooming"
         },  
     {
           "hour": "3",
@@ -54,36 +54,31 @@
           "hour": "11",
           "time_range": "1121 hours to 1222 hours",
           "task": "Running"
-        },
+        },  
+    {
+      "hour": "13",
+      "time_range": "1229 hours to 1545 hours",
+      "task": "Errands"
+      },
     {
           "hour": "12",
-          "time_range": "1229 hours to 1545 hours",
-          "task": "Errands"
+          "time_range": "1300 hours to 2200 hours",
+          "task": "Eat during free periods from 1300 hours hence"
         },
     {
-          "hour": "13",
+          "hour": "14",
           "time_range": "1443 hours to 1447 hours",
           "task": "101Pushups; 1+10+2 Somersaults"
-        },
-    {   
-        "hour": "14",
-        "time_range": "1550 hours to 1620 hours",
-        "task": "Sleep"
-    },    
+        },   
     {
-          "hour": "15",
+          "hour": "16",
           "time_range": "1643 hours to 1647 hours",
           "task": "101Pushups; 1+10+2 Somersaults"
       },
     {
-          "hour": "16",
+          "hour": "17",
           "time_range": "1649 hours to 1750 hours",
           "task": "Coding"
-      },
-    {
-        "hour": "17",
-        "time_range": "1759 hours to 2200 hours",
-        "task": "Eat during free periods from 1759 hours hence"
       },
     { 
         "hour": "18",
