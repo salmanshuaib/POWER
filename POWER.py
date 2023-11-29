@@ -14,9 +14,15 @@ yes_count = 0
 s = sched.scheduler(time.time, time.sleep)
 
 # Define a function to beep and prompt the user
-def beep_and_prompt(hour, task):
-    print(f"Time to {task}")
+def beep_and_prompt(hour, task, start_time=None):
+    if start_time is not None:
+        formatted_start_time = time.strftime("%H:%M", start_time)
+        print(f"Time to {task} (Starts at {formatted_start_time})")
+    else:
+        print(f"Time to {task}")
+    
     winsound.Beep(500, 1000)  # Beep for 1 second (you can adjust frequency and duration)
+    
     try:
         user_input = int(input("Did you accomplish POWER's Test? Enter 1 for YES, 0 for NO or CTRL+C to EXIT: "))
         if user_input == 1:
@@ -43,10 +49,13 @@ for entry in data["scheduled_hours"]:
     else:
         delay = start_time_seconds - current_time_seconds
 
-    s.enter(delay, 1, beep_and_prompt, argument=(hour, task))
+    if " to " in entry["time_range"]:
+        s.enter(delay, 1, beep_and_prompt, argument=(hour, task, start_time))
+    else:
+        s.enter(delay, 1, beep_and_prompt, argument=(hour, task))
 
 # Run the scheduler
-print("\033[91mPOWER's Test is starting. Be prepared!\033[0m")
+print("POWER's Test is starting. Be prepared!")
 
 try:
     s.run()
