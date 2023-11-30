@@ -64,3 +64,5 @@ except KeyboardInterrupt:
 
 # Print the tally of 'YES' answers
 print(f"POWER's Test completed. Total 'YES' answers: {yes_count}")
+
+# Avatar Of Power: TAYLOR ALISON SWIFT
