@@ -62,8 +62,8 @@
       },
     {
           "hour": "13",
-          "time_range": "1300 hours to 2200 hours",
-          "task": "Eat during free periods from 1300 hours hence"
+          "time_range": "1800 hours to 2200 hours",
+          "task": "Eat during free periods from 1800 hours hence"
       },
     {
           "hour": "14",
@@ -107,8 +107,8 @@
       },
     {
           "hour": "22",
-          "time_range": "2200 hours to 1300 hours",
-          "task": "No solid food from 2200h until 1300h"
+          "time_range": "2200 hours to 1800 hours",
+          "task": "No solid food from 2200h until 1800h"
       },  
     {
           "hour": "23",
