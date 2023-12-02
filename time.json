@@ -60,11 +60,16 @@
           "time_range": "1229 hours to 1545 hours",
           "task": "Errands"
       },
-    {
-          "hour": "13",
-          "time_range": "1443 hours to 1447 hours",
-          "task": "101Pushups; 1+10+2 Somersaults"
-      },   
+      {
+        "hour": "13",
+        "time_range": "1300 hours to 2200 hours",
+        "task": "Eat during free periods from 1300h to 2200h"
+    },
+  {
+        "hour": "14",
+        "time_range": "1443 hours to 1447 hours",
+        "task": "101Pushups; 1+10+2 Somersaults"
+    },   
     {
           "hour": "14",
           "time_range": "1643 hours to 1647 hours",
@@ -76,15 +81,10 @@
           "task": "Coding"
       },
     {
-          "hour": "16",
-          "time_range": "1800 hours to 2200 hours",
-          "task": "Eat during free periods from 1800h to 2200h"
-      },
-    { 
           "hour": "17",
           "time_range": "1829 hours to 1915 hours" ,
           "task": "Read! It increases Attention: furthering Respect for the OTHER"
-    },  
+      },  
     {
           "hour": "18",
           "time_range": "1930 hours to 2015 hours",
@@ -107,8 +107,8 @@
       },
     {
           "hour": "22",
-          "time_range": "2200 hours to 1800 hours",
-          "task": "No solid food from 2200h until 1800h"
+          "time_range": "2200 hours to 1300 hours",
+          "task": "No solid food from 2200h until 1300h"
       },  
     {
           "hour": "23",
