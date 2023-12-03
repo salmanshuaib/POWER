@@ -9,6 +9,7 @@ with open('time.json', 'r') as json_file:
 
 # Initialize the tally for 'YES' answers
 yes_count = 0
+total_count = 0
 
 # Create a scheduler
 s = sched.scheduler(time.time, time.sleep)
@@ -29,6 +30,8 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
         if user_input == 1:
             global yes_count
             yes_count += 1
+        global total_count
+        total_count += 1            
     except KeyboardInterrupt:
         exit()
 
@@ -56,7 +59,6 @@ for i, entry in enumerate(data["scheduled_hours"]):
 
     s.enter(delay, 1, beep_and_prompt, argument=(hour, task, start_time, next_start_time))
 
-# Run the scheduler
 print("POWER's Test is starting. Be prepared!")
 
 try:
@@ -65,5 +67,8 @@ except KeyboardInterrupt:
     pass
 
 # Print the tally of 'YES' answers
-print(f"POWER's Test completed. Total 'YES' answers: {yes_count}")
+print(f"POWER's Test completed. Total 'YES' answers: {yes_count}; out of {total_count} Tasks = Your score {yes_count / total_count * 100:.2f}%")
 input("Press ENTER to exit...")
+
+# Bugs:
+#1. If the user does not enter any value and hits CTRL+C, the program does not carry out a clean exit.
