@@ -14,10 +14,11 @@ yes_count = 0
 s = sched.scheduler(time.time, time.sleep)
 
 # Define a function to beep and prompt the user
-def beep_and_prompt(hour, task, start_time=None):
-    if start_time is not None:
+def beep_and_prompt(hour, task, start_time=None, next_time=None):
+    if start_time is not None and next_time is not None:
         formatted_start_time = time.strftime("%H:%M", start_time)
-        print(f"Time to {task} (Starts at {formatted_start_time})")
+        formatted_next_time = time.strftime("%H:%M", next_time)
+        print(f"Time to {task} (Starts at {formatted_start_time} and ends one minute prior to {formatted_next_time})")   #RETRIEVE the STORED Next Time
     else:
         print(f"Time to {task}")
     
@@ -38,6 +39,7 @@ for entry in data["scheduled_hours"]:
     time_range = entry["time_range"].split(" to ")
 
     start_time = time.strptime(time_range[0], "%H%M hours")
+    next_time = time.strptime(time_range[1], "%H%M hours")
 
     current_time = time.localtime()
     current_time_seconds = current_time.tm_hour * 3600 + current_time.tm_min * 60
@@ -50,9 +52,10 @@ for entry in data["scheduled_hours"]:
         delay = start_time_seconds - current_time_seconds
 
     if " to " in entry["time_range"]:
-        s.enter(delay, 1, beep_and_prompt, argument=(hour, task, start_time))
+        s.enter(delay, 1, beep_and_prompt, argument=(hour, task, start_time, next_time))
     else:
         s.enter(delay, 1, beep_and_prompt, argument=(hour, task))
+
 
 # Run the scheduler
 print("POWER's Test is starting. Be prepared!")
