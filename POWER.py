@@ -32,6 +32,7 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
             yes_count += 1
         global total_count
         total_count += 1            
+        print(f"Progress: Concurrent score [Tasks Completed / Total Tasks]:- {yes_count / total_count * 100:.2f}%")
     except KeyboardInterrupt:
         exit()
 
