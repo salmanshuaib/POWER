@@ -7,7 +7,7 @@ import winsound
 with open('time.json', 'r') as json_file:
     data = json.load(json_file)
 
-# Initialize the tally for 'YES' answers
+# Initialize the tally for 'YES' answers and total tasks completed
 yes_count = 0
 total_count = 0
 
@@ -31,8 +31,9 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
             global yes_count
             yes_count += 1
         global total_count
-        total_count += 1            
-        print(f"Progress: Concurrent score [Tasks Completed / Total Tasks]:- {yes_count / total_count * 100:.2f}%")
+        total_count += 1
+        if total_count > 0:
+            print(f"Progress: Concurrent score [Tasks Completed / Total Tasks]:- {yes_count / total_count * 100:.2f}%")
     except KeyboardInterrupt:
         exit()
 
@@ -67,9 +68,10 @@ try:
 except KeyboardInterrupt:
     pass
 
-# Print the tally of 'YES' answers
-print(f"POWER's Test completed. Total 'YES' answers: {yes_count}; out of {total_count} Tasks = Your score {yes_count / total_count * 100:.2f}%")
+# Print the tally of 'YES' answers and the percentage
+if total_count > 0:
+    print(f"POWER's Test completed. Total 'YES' answers: {yes_count}; out of {total_count} Tasks = Your score {yes_count / total_count * 100:.2f}%")
+else:
+    print("No tasks completed.")
+    
 input("Press ENTER to exit...")
-
-# Bugs:
-#1. If the user does not enter any value and hits CTRL+C, the program does not carry out a clean exit.
