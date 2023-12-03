@@ -18,7 +18,7 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
     if start_time is not None and next_time is not None:
         formatted_start_time = time.strftime("%H:%M", start_time)
         formatted_next_time = time.strftime("%H:%M", next_time)
-        print(f"Time to {task} (Starts at {formatted_start_time} and ends one minute prior to {formatted_next_time})")   #RETRIEVE the STORED Next Time
+        print(f"Time to {task} (Starts at {formatted_start_time} and ends one minute prior to {formatted_next_time})")
     else:
         print(f"Time to {task}")
     
@@ -33,13 +33,16 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
         exit()
 
 # Schedule beeping alarms for each specified time range using only start times
-for entry in data["scheduled_hours"]:
+for i, entry in enumerate(data["scheduled_hours"]):
     hour = entry["hour"]
     task = entry["task"]
     time_range = entry["time_range"].split(" to ")
 
     start_time = time.strptime(time_range[0], "%H%M hours")
-    next_time = time.strptime(time_range[1], "%H%M hours")
+
+    # Calculate the index of the next entry
+    next_index = (i + 1) % len(data["scheduled_hours"])
+    next_start_time = time.strptime(data["scheduled_hours"][next_index]["time_range"].split(" to ")[0], "%H%M hours")
 
     current_time = time.localtime()
     current_time_seconds = current_time.tm_hour * 3600 + current_time.tm_min * 60
@@ -51,11 +54,7 @@ for entry in data["scheduled_hours"]:
     else:
         delay = start_time_seconds - current_time_seconds
 
-    if " to " in entry["time_range"]:
-        s.enter(delay, 1, beep_and_prompt, argument=(hour, task, start_time, next_time))
-    else:
-        s.enter(delay, 1, beep_and_prompt, argument=(hour, task))
-
+    s.enter(delay, 1, beep_and_prompt, argument=(hour, task, start_time, next_start_time))
 
 # Run the scheduler
 print("POWER's Test is starting. Be prepared!")
@@ -68,4 +67,3 @@ except KeyboardInterrupt:
 # Print the tally of 'YES' answers
 print(f"POWER's Test completed. Total 'YES' answers: {yes_count}")
 input("Press ENTER to exit...")
-# Avatar Of Power: TAYLOR ALISON SWIFT
