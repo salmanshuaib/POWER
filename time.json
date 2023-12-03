@@ -7,112 +7,112 @@
         },
     {
         "hour": "2",
-        "time_range": "0329 hours to 0348 hours",
+        "time_range": "0329 hours",
         "task": "Trim head, cut nails, grooming"
         },  
     {
           "hour": "3",
-          "time_range": "0355 hours to 0435 hours",
+          "time_range": "0355 hours",
           "task": "Learn a foreign language with the aim to gaining a Certificate via Constancy; via which POWER perpetuates itself"
         },
     {
         "hour": "4",
-        "time_range": "0439 hours to 0442 hours",
+        "time_range": "0439 hours",
         "task": "Medications 1"
         },
     {
           "hour": "5",
-          "time_range": "0457 hours to 0522 hours",
+          "time_range": "0457 hours",
           "task": "Cold Shower"
       } ,
     {
           "hour": "6",
-          "time_range": "0534 hours to 0600 hours",
+          "time_range": "0534 hours",
           "task": "Shave face"
         },
     {
         "hour": "7",
-        "time_range": "0603 hours to 0607 hours",
+        "time_range": "0603 hours",
         "task": "T + L"
         },
     {
           "hour": "8",
-          "time_range": "0643 hours to 0647 hours",
+          "time_range": "0643 hours",
           "task": "101Pushups; 1+10+2 Somersaults"
         },
     {
           "hour": "9",
-          "time_range": "0659 hours to 0755 hours",
+          "time_range": "0659 hours",
           "task": "Coding"
         },
     {
           "hour": "10",
-          "time_range": "0759 hours to 1100 hours",
+          "time_range": "0759 hours",
           "task": "Exercise [Situps, Weights, Yoqi /OR/: SPORTS]"
         },
     {
           "hour": "11",
-          "time_range": "1121 hours to 1222 hours",
+          "time_range": "1121 hours",
           "task": "Running"
         },  
     {
           "hour": "12",
-          "time_range": "1229 hours to 1545 hours",
+          "time_range": "1229 hours",
           "task": "Errands //Piloting"
       },
       {
         "hour": "13",
-        "time_range": "1300 hours to 2200 hours",
+        "time_range": "1300 hours",
         "task": "Eat during free periods from 1300h to 2200h"
     },
   {
         "hour": "14",
-        "time_range": "1443 hours to 1447 hours",
+        "time_range": "1443 hours",
         "task": "101Pushups; 1+10+2 Somersaults"
     },   
     {
           "hour": "15",
-          "time_range": "1643 hours to 1647 hours",
+          "time_range": "1643 hours",
           "task": "101Pushups; 1+10+2 Somersaults"
       },
     {
           "hour": "16",
-          "time_range": "1649 hours to 1750 hours",
+          "time_range": "1649 hours",
           "task": "Coding"
       },
     {
           "hour": "17",
-          "time_range": "1829 hours to 1915 hours" ,
+          "time_range": "1829 hours" ,
           "task": "Read! It increases Attention: furthering Respect for the OTHER"
       },  
     {
           "hour": "18",
-          "time_range": "1929 hours to 2014 hours",
+          "time_range": "1929 hours",
           "task": "Moksha Meditation"
       },
     {
           "hour": "20",
-          "time_range": "2014 hours to 2017 hours",
+          "time_range": "2014 hours",
           "task": "Traverse rainbow bridge half-way to Kingdom of Heaven"
       },
     {
           "hour": "21",
-          "time_range": "2139 hours to 2142 hours",
+          "time_range": "2139 hours",
           "task": "Medications 2"
         },  
     {
           "hour": "22",
-          "time_range": "2200 hours to 2330 hours",
+          "time_range": "2200 hours",
           "task": "Bedtime"
       },
     {
           "hour": "23",
-          "time_range": "2200 hours to 1300 hours",
+          "time_range": "2200 hours",
           "task": "No solid food from 2200h until 1300h"
       },  
     {
           "hour": "24",
-          "time_range": "2329 hours to 2333 hours",
+          "time_range": "2329 hours",
           "task": "Supplements"
       }
   ]
