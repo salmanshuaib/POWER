@@ -18,7 +18,7 @@ s = sched.scheduler(time.time, time.sleep)
 def beep_and_prompt(hour, task, start_time=None, next_time=None):
     if start_time is not None and next_time is not None:
         formatted_start_time = time.strftime("%H:%M", start_time)
-        formatted_next_time = time.strftime("%H:%M", next_time)
+        formatted_next_time = time.strftime("%H:%M", next_time) #magic
         print(f"Time to {task} (Starts at {formatted_start_time} and ends one minute prior to {formatted_next_time})")
     else:
         print(f"Time to {task}")
@@ -36,6 +36,7 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
             print(f"Progress: Concurrent score [Tasks Completed / Total Tasks]:- {yes_count / total_count * 100:.2f}%")
     except KeyboardInterrupt:
         exit()
+    
 
 # Schedule beeping alarms for each specified time range using only start times
 for i, entry in enumerate(data["scheduled_hours"]):
@@ -47,7 +48,7 @@ for i, entry in enumerate(data["scheduled_hours"]):
 
     # Calculate the index of the next entry
     next_index = (i + 1) % len(data["scheduled_hours"])
-    next_start_time = time.strptime(data["scheduled_hours"][next_index]["time_range"].split(" to ")[0], "%H%M hours")
+    next_start_time = time.strptime(data["scheduled_hours"][next_index]["time_range"].split(" to ")[0], "%H%M hours")  #magic
 
     current_time = time.localtime()
     current_time_seconds = current_time.tm_hour * 3600 + current_time.tm_min * 60
@@ -61,7 +62,13 @@ for i, entry in enumerate(data["scheduled_hours"]):
 
     s.enter(delay, 1, beep_and_prompt, argument=(hour, task, start_time, next_start_time))
 
-print("POWER's Test is starting. Be prepared!")
+
+
+def GO(mono=time.local()):
+    clear_mono = time.strftime('%H:%M', mono)
+    
+    print(f"POWER's Test is starting next at {time.strftime('%H:%M', mono)}. Be prepared!")
+    s.run()
 
 try:
     s.run()

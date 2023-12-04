@@ -2,12 +2,12 @@
   "scheduled_hours": [
     {
         "hour": "1",
-        "time_range": "1815 hours",
+        "time_range": "0159 hours",
         "task": "Sleep"
         },
     {
         "hour": "2",
-        "time_range": "1816 hours",
+        "time_range": "0329 hours",
         "task": "Trim head, cut nails, grooming"
         },  
     {
