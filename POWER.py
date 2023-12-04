@@ -42,16 +42,34 @@ def struct_time_to_24hr_str(time_struct):
     return time.strftime('%H%M', time_struct)
 
 # Function to find the next scheduled time based on the current time
+# Function to convert a struct_time to a 24-hour format string
+def struct_time_to_24hr_str(time_struct):
+    return time.strftime('%H%M', time_struct)
+
+# Function to find the next scheduled time based on the current time
+# Function to convert a struct_time to a 24-hour format string
+def struct_time_to_24hr_str(time_struct):
+    return time.strftime('%H%M', time_struct)
+
+# Function to find the next scheduled time based on the current time
 def find_next_time(current_time):
     next_time = None
     current_time_str = struct_time_to_24hr_str(current_time)
     
     for entry in data["scheduled_hours"]:
-        time_range = entry["time_range"].split(" to ")
-        scheduled_time_str = time_range[0].replace(" hours", "")  # Remove " hours" and convert to 24-hour format
-        if scheduled_time_str > current_time_str:
-            next_time = time.strptime(scheduled_time_str, "%H%M")
+        start_time_str = entry["start_time"].replace(":", "")
+
+        start_time = time.strptime(start_time_str, "%H%M")
+
+        # Convert times to seconds for comparison
+        current_time_seconds = current_time.tm_hour * 3600 + current_time.tm_min * 60
+        start_time_seconds = start_time.tm_hour * 3600 + start_time.tm_min * 60
+
+        # Check if the current time is before the start time of the task
+        if current_time_seconds < start_time_seconds:
+            next_time = start_time
             break
+
     return next_time
 
 def GO():
@@ -60,23 +78,23 @@ def GO():
 
     Major_Only_Nukes_Oligopolies = find_next_time(mono)
     Monos = Major_Only_Nukes_Oligopolies
-    if Monos:
+
+    if Monos is not None:
         clear_monos = struct_time_to_24hr_str(Monos)
-        print(f"POWER's Test is starting now at {clear_monos}. Be prepared!")
+        print(f"POWER's Test is starting at {clear_monos}. Be prepared!")
     else:
         print("No upcoming tasks found in time.json.")
 
-    s.run()
-
 try:
     GO()
+    s.run()
+    # Print the tally of 'YES' answers and the percentage
+    if total_count > 0:
+        print(f"POWER's Test completed. Total 'YES' answers: {yes_count}; out of {total_count} Tasks = Your score {yes_count / total_count * 100:.2f}%")
+    else:
+        print("No tasks completed yet.")
+
+    input("Press ENTER to exit...")
+
 except KeyboardInterrupt:
     pass
-
-# Print the tally of 'YES' answers and the percentage
-if total_count > 0:
-    print(f"POWER's Test completed. Total 'YES' answers: {yes_count}; out of {total_count} Tasks = Your score {yes_count / total_count * 100:.2f}%")
-else:
-    print("No tasks completed.")
-
-input("Press ENTER to exit...")
