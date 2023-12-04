@@ -1,119 +1,119 @@
 {
   "scheduled_hours": [
     {
-      "hour": "1",
-      "start_time": "0159",
-      "task": "Sleep"
-    },
+        "hour": "1",
+        "time_range": "0159 hours",
+        "task": "Sleep"
+        },
     {
-      "hour": "2",
-      "start_time": "0329",
-      "task": "Trim head, cut nails, grooming"
-    },
+        "hour": "2",
+        "time_range": "0329 hours",
+        "task": "Trim head, cut nails, grooming"
+        },  
     {
-      "hour": "3",
-      "start_time": "0355",
-      "task": "Learn a foreign language with the aim to gaining a Certificate via Constancy - increases income"
-    },
+          "hour": "3",
+          "time_range": "0355 hours",
+          "task": "Learn a foreign language with the aim to gaining a Certificate via Constancy - increases income"
+        },
     {
-      "hour": "4",
-      "start_time": "0439",
-      "task": "Medications 1"
-    },
+        "hour": "4",
+        "time_range": "0439 hours",
+        "task": "Medications 1"
+        },
     {
-      "hour": "5",
-      "start_time": "0457",
-      "task": "Cold Shower"
-    },
+          "hour": "5",
+          "time_range": "0457 hours",
+          "task": "Cold Shower"
+      } ,
     {
-      "hour": "6",
-      "start_time": "0534",
-      "task": "Shave face"
-    },
+          "hour": "6",
+          "time_range": "0534 hours",
+          "task": "Shave face"
+        },
     {
-      "hour": "7",
-      "start_time": "0603",
-      "task": "T + L"
-    },
+        "hour": "7",
+        "time_range": "0603 hours",
+        "task": "T + L"
+        },
     {
-      "hour": "8",
-      "start_time": "0643",
-      "task": "101Pushups; 1+10+2 Somersaults"
-    },
+          "hour": "8",
+          "time_range": "0643 hours",
+          "task": "101Pushups; 1+10+2 Somersaults"
+        },
     {
-      "hour": "9",
-      "start_time": "0659",
-      "task": "Coding"
-    },
+          "hour": "9",
+          "time_range": "0659 hours",
+          "task": "Coding"
+        },
     {
-      "hour": "10",
-      "start_time": "0759",
-      "task": "Exercise [Situps, Weights, Yoqi /OR/: SPORTS]"
-    },
+          "hour": "10",
+          "time_range": "0759 hours",
+          "task": "Exercise [Situps, Weights, Yoqi /OR/: SPORTS]"
+        },
     {
-      "hour": "11",
-      "start_time": "1121",
-      "task": "Running"
-    },
+          "hour": "11",
+          "time_range": "1121 hours",
+          "task": "Running"
+        },  
     {
-      "hour": "12",
-      "start_time": "1229",
-      "task": "Errands //Piloting"
+          "hour": "12",
+          "time_range": "1229 hours",
+          "task": "Errands //Piloting"
+      },
+      {
+        "hour": "13",
+        "time_range": "1300 hours",
+        "task": "Eat during free periods from 1300h to 2200h"
     },
+  {
+        "hour": "14",
+        "time_range": "1443 hours",
+        "task": "101Pushups; 1+10+2 Somersaults"
+    },   
     {
-      "hour": "13",
-      "start_time": "1300",
-      "task": "Eat during free periods from 1300h to 2200h"
-    },
+          "hour": "15",
+          "time_range": "1643 hours",
+          "task": "101Pushups; 1+10+2 Somersaults"
+      },
     {
-      "hour": "14",
-      "start_time": "1443",
-      "task": "101Pushups; 1+10+2 Somersaults"
-    },
+          "hour": "16",
+          "time_range": "1649 hours",
+          "task": "Coding"
+      },
     {
-      "hour": "15",
-      "start_time": "1643",
-      "task": "101Pushups; 1+10+2 Somersaults"
-    },
+          "hour": "17",
+          "time_range": "1829 hours" ,
+          "task": "Read! It increases Attention: furthering Respect for the OTHER"
+      },  
     {
-      "hour": "16",
-      "start_time": "1649",
-      "task": "Coding"
-    },
+          "hour": "18",
+          "time_range": "1929 hours",
+          "task": "Moksha Meditation"
+      },
     {
-      "hour": "17",
-      "start_time": "1829",
-      "task": "Read! It increases Attention: furthering Respect for the OTHER"
-    },
+          "hour": "20",
+          "time_range": "2014 hours",
+          "task": "Traverse rainbow bridge half-way to Kingdom of Heaven"
+      },
     {
-      "hour": "18",
-      "start_time": "1929",
-      "task": "Moksha Meditation"
-    },
+          "hour": "21",
+          "time_range": "2139 hours",
+          "task": "Medications 2"
+        },  
     {
-      "hour": "20",
-      "start_time": "2014",
-      "task": "Traverse rainbow bridge half-way to Kingdom of Heaven"
-    },
+          "hour": "22",
+          "time_range": "2200 hours",
+          "task": "Bedtime"
+      },
     {
-      "hour": "21",
-      "start_time": "2139",
-      "task": "Medications 2"
-    },
+          "hour": "23",
+          "time_range": "2200 hours",
+          "task": "No solid food from 2200h until 1300h"
+      },  
     {
-      "hour": "22",
-      "start_time": "2200",
-      "task": "Bedtime"
-    },
-    {
-      "hour": "23",
-      "start_time": "2200",
-      "task": "No solid food from 2200h until 1300h"
-    },
-    {
-      "hour": "24",
-      "start_time": "2329",
-      "task": "Supplements"
-    }
+          "hour": "24",
+          "time_range": "2329 hours",
+          "task": "Supplements"
+      }
   ]
 }
