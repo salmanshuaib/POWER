@@ -33,7 +33,7 @@
     {
         "hour": "7",
         "time_range": "0550 hours",
-        "task": "T + L"
+        "task": "Tolterodine + Lutein + Fennel Seeds (sugar-coated & raw) + Supplements"
         },
     {
           "hour": "8",
@@ -73,7 +73,7 @@
   {
     "hour": "15",
     "time_range": "1447 hours",
-    "task": "101Pushups; 1+10+2 Somersaults"
+    "task": "Errands"
   },   
   {
       "hour": "16",
@@ -121,14 +121,15 @@
           "task": "Bedtime"
       },
     {
-          "hour": "25",
-          "time_range": "2159 hours",
-          "task": "No solid food from 2159h until 1300h"
-      },  
+        "hour": "25",
+        "time_range": "0000 hours",
+        "task": "Bedtime"
+    },
     {
-          "hour": "26",
-          "time_range": "2329 hours",
-          "task": "Supplements"
-      }
+        "hour": "26",
+        "time_range": "1300 hours",
+        "task": "No solid food from 0000h until 1300h"
+      } 
+    
   ]
 }
