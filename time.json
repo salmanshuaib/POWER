@@ -27,12 +27,12 @@
       } ,
     {
           "hour": "6",
-          "time_range": "0534 hours",
+          "time_range": "0521 hours",
           "task": "Shave face"
         },
     {
         "hour": "7",
-        "time_range": "0603 hours",
+        "time_range": "0550 hours",
         "task": "T + L"
         },
     {
