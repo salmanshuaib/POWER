@@ -97,31 +97,36 @@
       },  
     {
           "hour": "20",
-          "time_range": "1929 hours",
-          "task": "Moksha Meditation"
+          "time_range": "1930 hours",
+          "task": "Moksha (stillness/pain backed) Meditation"
       },
-    {
-          "hour": "21",
-          "time_range": "2015 hours",
-          "task": "Traverse rainbow bridge half-way to Kingdom of Heaven"
-      },
+      {
+        "hour": "21",
+        "time_range": "2013 hours",
+        "task": "End Moksha Meditation"
+    },  
     {
           "hour": "22",
-          "time_range": "2019 hours",
+          "time_range": "2016 hours",
+          "task": "Visualize Traversing Rainbow Bridge Half-way To Kingdom Of Heaven"
+      },
+    {
+          "hour": "23",
+          "time_range": "2020 hours",
           "task": "Medications 2"
         },  
     {
-          "hour": "23",
+          "hour": "24",
           "time_range": "2155 hours",
           "task": "Bedtime"
       },
     {
-          "hour": "24",
+          "hour": "25",
           "time_range": "2159 hours",
           "task": "No solid food from 2159h until 1300h"
       },  
     {
-          "hour": "25",
+          "hour": "26",
           "time_range": "2329 hours",
           "task": "Supplements"
       }
