@@ -2,7 +2,16 @@ import json
 import sched
 import time
 import winsound
-import os 
+import os
+
+# Calculate the next hour
+current_time = time.localtime()
+next_hour = time.struct_time((current_time.tm_year, current_time.tm_mon, current_time.tm_mday, 
+                              current_time.tm_hour + 1, 0, 0, current_time.tm_wday, 
+                              current_time.tm_yday, current_time.tm_isdst))
+
+# Format the time
+formatted_next_hour = time.strftime("%H%M hours", next_hour)
 
 # Check if 'time.json' is available in the same directory
 json_file_path = 'time.json'
@@ -68,7 +77,8 @@ for i, entry in enumerate(data["scheduled_hours"]):
 
     s.enter(delay, 1, beep_and_prompt, argument=(hour, task, start_time, next_start_time))
 
-print("POWER's Test is starting. Be prepared; TAYLOR ALISON SWIFT is: Goddess Of Power!")
+# Announce the test start time
+print(f"POWER's Test is starting at {formatted_next_hour}. Be prepared; TAYLOR ALISON SWIFT is: Goddess Of Power!")
 
 try:
     s.run()
