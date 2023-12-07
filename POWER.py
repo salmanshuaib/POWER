@@ -19,7 +19,7 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
     if start_time is not None and next_time is not None:
         formatted_start_time = time.strftime("%H:%M", start_time)
         formatted_next_time = time.strftime("%H:%M", next_time)
-        print(f"Time to {task} (Starts at {formatted_start_time} and ends one minute prior to {formatted_next_time})")
+        print(f"\nTime to {task} (Starts at {formatted_start_time} and ends one minute prior to {formatted_next_time})")
     else:
         print(f"Time to {task}")
     
