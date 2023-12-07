@@ -4,14 +4,22 @@ import time
 import winsound
 import os
 
-# Calculate the next hour
-current_time = time.localtime()
-next_hour = time.struct_time((current_time.tm_year, current_time.tm_mon, current_time.tm_mday, 
-                              current_time.tm_hour + 1, 0, 0, current_time.tm_wday, 
-                              current_time.tm_yday, current_time.tm_isdst))
+# Function to find the next scheduled time
+def find_next_scheduled_time(data, current_time):
+    current_time_seconds = current_time.tm_hour * 3600 + current_time.tm_min * 60
+    closest_time = None
+    closest_delay = float('inf')
 
-# Format the time
-formatted_next_hour = time.strftime("%H%M hours", next_hour)
+    for entry in data["scheduled_hours"]:
+        scheduled_time = time.strptime(entry["time_range"].split(" ")[0], "%H%M")
+        scheduled_time_seconds = scheduled_time.tm_hour * 3600 + scheduled_time.tm_min * 60
+
+        delay = (scheduled_time_seconds - current_time_seconds) % 86400
+        if delay < closest_delay:
+            closest_delay = delay
+            closest_time = scheduled_time
+
+    return closest_time
 
 # Check if 'time.json' is available in the same directory
 json_file_path = 'time.json'
@@ -22,6 +30,13 @@ if not os.path.exists(json_file_path):
 # Load the JSON data from the 'time.json' file
 with open('time.json', 'r') as json_file:
     data = json.load(json_file)
+
+# Calculate the next scheduled time
+current_time = time.localtime()
+next_scheduled_time = find_next_scheduled_time(data, current_time)
+
+# Format the next scheduled time
+formatted_next_time = time.strftime("%H%M hours", next_scheduled_time)
 
 # Initialize the tally for 'YES' answers and total tasks completed
 yes_count = 0
@@ -78,7 +93,7 @@ for i, entry in enumerate(data["scheduled_hours"]):
     s.enter(delay, 1, beep_and_prompt, argument=(hour, task, start_time, next_start_time))
 
 # Announce the test start time
-print(f"POWER's Test is starting at {formatted_next_hour}. Be prepared; TAYLOR ALISON SWIFT is: Goddess Of Power!")
+print(f"POWER's Test is starting at {formatted_next_time}. Be prepared; TAYLOR ALISON SWIFT is: Goddess Of Power!")
 
 try:
     s.run()
