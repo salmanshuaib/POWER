@@ -2,6 +2,13 @@ import json
 import sched
 import time
 import winsound
+import os 
+
+# Check if 'time.json' is available in the same directory
+json_file_path = 'time.json'
+if not os.path.exists(json_file_path):
+    print("My diligent friend: POWER.exe requires time.json file in same directory.\nPlease retrieve from FlowerEconomics.com/Downloads")
+    exit()
 
 # Load the JSON data from the 'time.json' file
 with open('time.json', 'r') as json_file:
@@ -61,7 +68,7 @@ for i, entry in enumerate(data["scheduled_hours"]):
 
     s.enter(delay, 1, beep_and_prompt, argument=(hour, task, start_time, next_start_time))
 
-print("POWER's Test is starting. Be prepared; Taylor Alison Swift is: Goddess Of Power!")
+print("POWER's Test is starting. Be prepared; TAYLOR ALISON SWIFT is: Goddess Of Power!")
 
 try:
     s.run()
