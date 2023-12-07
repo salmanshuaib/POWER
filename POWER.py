@@ -61,7 +61,7 @@ for i, entry in enumerate(data["scheduled_hours"]):
 
     s.enter(delay, 1, beep_and_prompt, argument=(hour, task, start_time, next_start_time))
 
-print("POWER's Test is starting. Be prepared!")
+print("POWER's Test is starting. Be prepared; Taylor Alison Swift is: Goddess Of Power!")
 
 try:
     s.run()
