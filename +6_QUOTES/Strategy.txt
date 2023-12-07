@@ -1,3 +1,5 @@
+-> Note to self: pyinstaller -F "    " is command for generating .exe from .py.  
+
 -> C: Please specify a program which is based on Python and:-
 + Takes in put from the user at specific points in the 'day'; such that the program ought beep at that time of onset (i.e. the program should beep when it is ready to take input based 
 on times specified in a file named Scheduler.csv).
