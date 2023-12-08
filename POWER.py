@@ -4,7 +4,15 @@ import time
 import winsound
 import os
 
-Grace = (40/100)*100  #Incase gamer starts late or the progream if offline; the initial score is 40%  [ref: Lorde:- "Team"]
+Grace = (40/100)*100  #Incase gamer starts late or the progream if offline; the initial score is 40%  [ref: Lorde:- "TEAM: We've not yet lost all our graces"]
+print("POWER is a phenomenon, otherwise known as FEELING, that seeks to extricate one from the Task Precedent. Unit: Excalibur. Superunit: Watt.")
+print("^")
+print("^")
+print("Grace == your starting mark == 40%  //You are starting out as a four-Hat officer.")
+print("^")
+print("^")
+
+
 # Function to find the next scheduled time
 def find_next_scheduled_time(data, current_time):
     current_time_seconds = current_time.tm_hour * 3600 + current_time.tm_min * 60
@@ -103,7 +111,7 @@ for i, entry in enumerate(data["scheduled_hours"]):
     s.enter(delay, 1, beep_and_prompt, argument=(hour, task, start_time, next_start_time))
 
 # Announce the test start time
-print(f"POWER's Test is starting at {formatted_next_time}. Be prepared!\nWow!! TAYLOR SWIFT is Goddess Of Power!\nSource: Meditation on breath")
+print(f"POWER's Test is starting at {formatted_next_time}. Be prepared!\nIndeed! TAYLOR SWIFT is Goddess Of Power!!\nSource: Meditation on breath.")
 
 try:
     s.run()
