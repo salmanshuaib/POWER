@@ -53,7 +53,7 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
         print(f"\nTime to {task} (Starts at {formatted_start_time} and ends one minute prior to {formatted_next_time})")
     else:
         print(f"Time to {task}")
-
+    
     winsound.Beep(500, 1000)  # Beep for 1 second (you can adjust frequency and duration)
 
     while True:
@@ -75,8 +75,6 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
     total_count += 1
     if total_count > 0:
         print(f"Progress: Concurrent score [Tasks Completed / Total Tasks]:- {yes_count / total_count * 100:.2f}%")
-
-        exit()
 
 # Schedule beeping alarms for each specified time range using only start times
 for i, entry in enumerate(data["scheduled_hours"]):
