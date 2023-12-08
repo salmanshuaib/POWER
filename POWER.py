@@ -53,19 +53,29 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
         print(f"\nTime to {task} (Starts at {formatted_start_time} and ends one minute prior to {formatted_next_time})")
     else:
         print(f"Time to {task}")
-    
+
     winsound.Beep(500, 1000)  # Beep for 1 second (you can adjust frequency and duration)
-    
-    try:
-        user_input = int(input("Did you accomplish POWER's Test? Enter 1 for YES, 0 for NO or CTRL+C to EXIT: "))
-        if user_input == 1:
-            global yes_count
-            yes_count += 1
-        global total_count
-        total_count += 1
-        if total_count > 0:
-            print(f"Progress: Concurrent score [Tasks Completed / Total Tasks]:- {yes_count / total_count * 100:.2f}%")
-    except KeyboardInterrupt:
+
+    while True:
+        try:
+            user_input = input("Did you accomplish POWER's Test? Enter 1 for YES, 0 for NO or CTRL+C to EXIT: ")
+            if user_input == "1":
+                global yes_count
+                yes_count += 1
+                break
+            elif user_input == "0":
+                break
+            else:
+                print("Invalid input. Please enter only 1 or 0.")
+        except KeyboardInterrupt:
+            print("\nExiting...")
+            exit()
+
+    global total_count
+    total_count += 1
+    if total_count > 0:
+        print(f"Progress: Concurrent score [Tasks Completed / Total Tasks]:- {yes_count / total_count * 100:.2f}%")
+
         exit()
 
 # Schedule beeping alarms for each specified time range using only start times
@@ -93,7 +103,7 @@ for i, entry in enumerate(data["scheduled_hours"]):
     s.enter(delay, 1, beep_and_prompt, argument=(hour, task, start_time, next_start_time))
 
 # Announce the test start time
-print(f"POWER's Test is starting at {formatted_next_time}. Be prepared; TAYLOR ALISON SWIFT is: Goddess Of Power!")
+print(f"POWER's Test is starting at {formatted_next_time}. Be prepared!\nWow!! TAYLOR SWIFT is Goddess Of Power!\nSource: Meditation on breath")
 
 try:
     s.run()
