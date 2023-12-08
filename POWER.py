@@ -33,7 +33,7 @@ def find_next_scheduled_time(data, current_time):
 # Check if 'time.json' is available in the same directory
 json_file_path = 'time.json'
 if not os.path.exists(json_file_path):
-    print("My diligent friend: POWER.exe requires time.json file in same directory.\nPlease retrieve from FlowerEconomics.com/Downloads")
+    print("Diligent officer: POWER.exe requires time.json file in same directory.\nPlease retrieve from FlowerEconomics.com/Downloads")
     exit()
 
 # Load the JSON data from the 'time.json' file
