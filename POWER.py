@@ -3,6 +3,17 @@ import sched
 import time
 import winsound
 import os
+import ctypes
+
+# Get the handle of the console window
+kernel32 = ctypes.WinDLL('kernel32')
+hWnd = kernel32.GetConsoleWindow()
+
+# Maximize the console window
+user32 = ctypes.WinDLL('user32')
+SW_MAXIMIZE = 3
+user32.ShowWindow(hWnd, SW_MAXIMIZE)
+
 
 Grace = (40/100)*100  #Incase gamer starts late or the progream if offline; the initial score is 40%  [ref: Lorde:- "TEAM: We've not yet lost all our graces"]
 print("POWER is a phenomenon, otherwise known as FEELING, that seeks to extricate one from the Task Precedent. Unit: Excalibur. Superunit: Watt.")
