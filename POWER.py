@@ -4,6 +4,7 @@ import time
 import winsound
 import os
 
+Grace = (40/100)*100  #Incase gamer starts late or the progream if offline; the initial score is 40%  [ref: Lorde:- "Team"]
 # Function to find the next scheduled time
 def find_next_scheduled_time(data, current_time):
     current_time_seconds = current_time.tm_hour * 3600 + current_time.tm_min * 60
@@ -74,7 +75,8 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
     global total_count
     total_count += 1
     if total_count > 0:
-        print(f"Progress: Concurrent score [Tasks Completed / Total Tasks]:- {yes_count / total_count * 100:.2f}%")
+        ConcurrentScore = ((yes_count / total_count) * 100) - Grace
+        print(f"Progress: Concurrent score [Tasks Completed / Total Tasks]:- {ConcurrentScore:.2f}%")
 
 # Schedule beeping alarms for each specified time range using only start times
 for i, entry in enumerate(data["scheduled_hours"]):
@@ -110,7 +112,8 @@ except KeyboardInterrupt:
 
 # Print the tally of 'YES' answers and the percentage
 if total_count > 0:
-    print(f"POWER's Test completed. Total 'YES' answers: {yes_count}; out of {total_count} Tasks = Your score {yes_count / total_count * 100:.2f}%")
+    FinalScore = ((yes_count / total_count) * 100) - Grace
+    print(f"POWER's Test completed. Total 'YES' answers: {yes_count}; out of {total_count} Tasks = Your final score {FinalScore:.2f}%")
 else:
     print("No tasks completed.")
     
