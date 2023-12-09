@@ -2,12 +2,12 @@
 "scheduled_hours": [
 {
 "hour": "1",
-"time_range": "2130 hours",
+"time_range": "0000 hours",
 "task": "No solid food from 0000h until 1800h"
 }, 
 {
 "hour": "2",
-"time_range": "2131 hours",
+"time_range": "0159 hours",
 "task": "Sleep"
 },
 {
