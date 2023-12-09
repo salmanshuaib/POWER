@@ -14,10 +14,9 @@ user32 = ctypes.WinDLL('user32')
 SW_MAXIMIZE = 3
 user32.ShowWindow(hWnd, SW_MAXIMIZE)
 
-
-Grace = (40/100)*100  #Incase gamer starts late or the progream if offline; the initial score is 40%  [ref: Lorde:- "TEAM: We've not yet lost all our graces"]
+Grace = (20/100)*100  #Incase gamer starts late or the progream is offline; the initial score is 20%  [ref: Taylor Swift: "22", Lorde:- "Team"]
 print("POWER is a phenomenon, otherwise known as FEELING, that seeks to extricate one from the Task Precedent. Unit: Excalibur. Superunit: Watt.")
-print("^^Grace^^ == 40%") #Starting Mark
+print("^^Grace^^ == 20%") #Starting Mark
 
 # Function to find the next scheduled time
 def find_next_scheduled_time(data, current_time):
@@ -65,7 +64,7 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
     if start_time is not None and next_time is not None:
         formatted_start_time = time.strftime("%H:%M", start_time)
         formatted_next_time = time.strftime("%H:%M", next_time)
-        print(f"\nTime to {task} (Starts at {formatted_start_time} and ends one minute prior to {formatted_next_time})")
+        print(f"\nTime to {task} (Starts at {formatted_start_time} and first ends one minute prior to {formatted_next_time})")
     else:
         print(f"Time to {task}")
     
@@ -91,7 +90,7 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
     if total_count > 0:
         ConcurrentScore = min(((yes_count / total_count) * 100) + Grace, 100)
         print(f"Progress: Concurrent score: {yes_count} 'YES' answers so far out of {total_count} Tasks => {ConcurrentScore:.2f}%")
-        print("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 40%]")
+        print("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 20%]")
 
 # Schedule beeping alarms for each specified time rprint(f"POWER's Test completed. Total 'YES' answers: {yes_count}; out of {total_count} Tasks = Your final score {FinalScore:.2f}%")ange using only start times
 for i, entry in enumerate(data["scheduled_hours"]):
@@ -131,8 +130,8 @@ if total_count > 0:
     hats = FinalScore/10
     print(f"POWER's Test completed. Total 'YES' answers: {yes_count}; out of {total_count} Tasks") 
     print("Your final score {FinalScore:.2f}%")
-    print("Your total score is {hats:.2f} hats of Grace")
-    print("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 40%]")
+    print(f"Your total score is {hats:.2f} hats of Grace")
+    print("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 20%]")
 else:
     print("No tasks completed.")
     
