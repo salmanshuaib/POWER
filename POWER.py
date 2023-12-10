@@ -4,7 +4,36 @@ import time
 import winsound
 import os
 import ctypes
-import platform  # Import the platform module
+import platform
+from colorama import init, Fore, Style  # Import colorama modules
+
+init(autoreset=True)  # Initialize colorama
+
+def is_cmd_terminal():
+    # Check if the TERM_PROGRAM environment variable is "cmd.exe"
+    return os.environ.get('TERM_PROGRAM') == 'cmd.exe'
+
+def transform_ansi_to_cmd_colors(text):
+    if is_cmd_terminal():
+        # Define mappings for ANSI colors to CMD colorama colors
+        ansi_to_cmd_colors = {
+            '\033[31m': Fore.RED,       # Red
+            '\033[97m': Fore.WHITE,     # White
+            '\033[32m': Fore.GREEN,     # Green
+            '\033[33m': Fore.YELLOW,    # Yellow
+            '\033[34m': Fore.BLUE,      # Blue
+            '\033[35m': Fore.MAGENTA,   # Pink
+            '\033[96m': Fore.CYAN,      # Cyan
+        }
+
+        # Replace ANSI color codes with CMD colorama colors
+        for ansi_code, cmd_code in ansi_to_cmd_colors.items():
+            text = text.replace(ansi_code, cmd_code)
+
+        # Replace ANSI reset code with CMD colorama reset code
+        text = text.replace('\033[0m', Style.RESET_ALL)
+
+    return text
 
 # Get the handle of the console window
 kernel32 = ctypes.WinDLL('kernel32')
@@ -15,37 +44,9 @@ user32 = ctypes.WinDLL('user32')
 SW_MAXIMIZE = 3
 user32.ShowWindow(hWnd, SW_MAXIMIZE)
 
-
-def is_cmd_terminal():
-    # Check if the TERM_PROGRAM environment variable is "cmd.exe"
-    return os.environ.get('TERM_PROGRAM') == 'cmd.exe'
-
-def transform_ansi_to_cmd_colors(text):
-    if is_cmd_terminal():
-        # Define mappings for ANSI colors to CMD color codes
-        ansi_to_cmd_colors = {
-            '\033[31m': '\033[91m',  # Red
-            '\033[32m': '\033[92m',  # Green
-            '\033[33m': '\033[93m',  # Yellow
-            '\033[34m': '\033[94m',  # Blue
-            '\033[35m': '\033[95m',  # Pink
-        }
-
-        # Replace ANSI color codes with CMD color codes
-        for ansi_code, cmd_code in ansi_to_cmd_colors.items():
-            text = text.replace(ansi_code, cmd_code)
-
-        # Replace ANSI reset code with CMD reset code
-        text = text.replace('\033[0m', '\033[0m')
-
-    return text
-
-# Rest of your code...
-
-
-Grace = (20/100)*100  #Incase gamer starts late or the program is offline; the initial score is 20%  [ref: Taylor Swift: "22", Lorde:- "Team"]
-print("POWER is a phenomenon, otherwise known as FEELING, that seeks to extricate one from the Task Precedent. Unit: Excalibur. Superunit: Watt.")
-print(transform_ansi_to_cmd_colors("\033[34m^^Grace^^\033[0m == 20%"))  # Starting Mark with transformed colors
+Grace = (20/100)*100  # Incase gamer starts late or the program is offline; the initial score is 20%
+print("\033[96mPOWER is a phenomenon, otherwise known as FEELING, that seeks to extricate one from the Task Precedent. \nUnit: Excalibur. Superunit: Watt.\033[0m")
+print(transform_ansi_to_cmd_colors("\033[34m^^Grace\033[0m == 20%"))  # Starting Mark with transformed colors
 
 # Function to find the next scheduled time
 def find_next_scheduled_time(data, current_time):
@@ -93,7 +94,7 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
     if start_time is not None and next_time is not None:
         formatted_start_time = time.strftime("%H:%M", start_time)
         formatted_next_time = time.strftime("%H:%M", next_time)
-        print(transform_ansi_to_cmd_colors(f"\nTime to {task} (Starts at {formatted_start_time} and ends one minute prior to {formatted_next_time})"))
+        print(transform_ansi_to_cmd_colors(f"\nTime to {task} (Starts at \033[0m{formatted_start_time}\033[91m and \033[91mends one minute prior to {formatted_next_time}\033[0m)"))
     else:
         print(transform_ansi_to_cmd_colors(f"Time to {task}"))
     
@@ -118,7 +119,7 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
     total_count += 1
     if total_count > 0:
         ConcurrentScore = min(((yes_count / total_count) * 100) + Grace, 100)
-        print(transform_ansi_to_cmd_colors(f"Progress: \033[32mConcurrent score: {yes_count} 'YES' answers so far out of {total_count} Tasks => {ConcurrentScore:.2f}\033[0m%"))
+        print(transform_ansi_to_cmd_colors(f"Progress: \033[32mConcurrent score: {yes_count} 'YES' answers so far out of {total_count} Tasks => \033[0m\033[94m{ConcurrentScore:.2f}%\033[0m"))
         print(transform_ansi_to_cmd_colors("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 20%]"))
 
 # Schedule beeping alarms for each specified time range using only start times
@@ -146,7 +147,7 @@ for i, entry in enumerate(data["scheduled_hours"]):
     s.enter(delay, 1, beep_and_prompt, argument=(hour, task, start_time, next_start_time))
 
 # Announce the test start time
-print(transform_ansi_to_cmd_colors(f"POWER's Test is starting at {formatted_next_time}. Be prepared!\nIndeed! \033[35mTAYLOR SWIFT\033[0m is Goddess Of POWER!!\nSource: Meditation on breath."))
+print(transform_ansi_to_cmd_colors(f"POWER's Test is starting at \033[91m{formatted_next_time}\033[0m. Be prepared!\nIndeed! \033[35mTAYLOR SWIFT\033[0m is Goddess Of POWER!!\nSource: Meditation on breath."))
 
 try:
     s.run()
@@ -158,7 +159,7 @@ if total_count > 0:
     FinalScore = min(((yes_count / total_count) * 100) + Grace, 100)
     hats = FinalScore/10
     print(f"POWER's Test completed. Total 'YES' answers: {yes_count}; out of {total_count} Tasks") 
-    print(f"RESULT: \033[32mYour final score {FinalScore:.2f}\033[0m%")
+    print(f"RESULT: \033[32mYour final score => \033[0m \033[94m{FinalScore:.2f}%\033[0m")
     print("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 20%]")
 else:
     print("No tasks completed.")
