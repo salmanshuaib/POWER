@@ -1,1 +1,9 @@
 /Output
+
+# Ignore everything in the android directory
+/android/*
+
+# Don't ignore these specific android Retriever project files
+#!/android/Retriever/app/src/main/AndroidManifest.xml
+#!/android/Retriever/app/src/main/java/com/text/retriever/MainActivity.java
+#!/android/Retriever/app/src/main/java/com/text/retriever/MessageMonitoringService.java
