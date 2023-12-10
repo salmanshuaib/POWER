@@ -35,6 +35,17 @@ def transform_ansi_to_cmd_colors(text):
 
     return text
 
+# Check if 'time.json' is available in the same directory
+json_file_path = 'time.json'
+if not os.path.exists(json_file_path):
+    print(transform_ansi_to_cmd_colors("\033[96mDiligent officer: POWER.exe requires time.json file in the same directory.\nPlease retrieve this file from FlowerEconomics.com/Downloads\033[0m"))
+    exit()
+
+# Load the JSON data from the 'time.json' file
+with open('time.json', 'r') as json_file:
+    data = json.load(json_file)
+
+
 # Get the handle of the console window
 kernel32 = ctypes.WinDLL('kernel32')
 hWnd = kernel32.GetConsoleWindow()
@@ -64,16 +75,6 @@ def find_next_scheduled_time(data, current_time):
             closest_time = scheduled_time
 
     return closest_time
-
-# Check if 'time.json' is available in the same directory
-json_file_path = 'time.json'
-if not os.path.exists(json_file_path):
-    print(transform_ansi_to_cmd_colors("\033[31mDiligent officer: POWER.exe requires time.json file in the same directory.\nPlease retrieve from FlowerEconomics.com/Downloads\033[0m"))
-    exit()
-
-# Load the JSON data from the 'time.json' file
-with open('time.json', 'r') as json_file:
-    data = json.load(json_file)
 
 # Calculate the next scheduled time
 current_time = time.localtime()
