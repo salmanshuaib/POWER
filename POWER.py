@@ -45,7 +45,6 @@ if not os.path.exists(json_file_path):
 with open('time.json', 'r') as json_file:
     data = json.load(json_file)
 
-
 # Get the handle of the console window
 kernel32 = ctypes.WinDLL('kernel32')
 hWnd = kernel32.GetConsoleWindow()
@@ -113,7 +112,10 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
             else:
                 print(transform_ansi_to_cmd_colors("\033[31mInvalid input. Please enter only 1 or 0.\033[0m"))
         except KeyboardInterrupt:
+            # This KeyboardInterrupt exception is triggered if the user presses Ctrl+C during the input prompt.
+            # It prints a message and then uses the exit() function to terminate the script execution.
             print(transform_ansi_to_cmd_colors("\nExiting..."))
+            input("Press ENTER to continue...")  # Wait for ENTER key before exiting
             exit()
 
     global total_count
@@ -153,6 +155,8 @@ print(transform_ansi_to_cmd_colors(f"POWER's Test is starting at \033[91m{format
 try:
     s.run()
 except KeyboardInterrupt:
+    # This KeyboardInterrupt exception is triggered if the user presses Ctrl+C while the scheduler is running.
+    # The pass statement is used here to gracefully exit the scheduler loop without performing any additional actions.
     pass
 
 # Print the tally of 'YES' answers and the percentage
