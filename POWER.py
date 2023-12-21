@@ -54,7 +54,7 @@ user32 = ctypes.WinDLL('user32')
 SW_MAXIMIZE = 3
 user32.ShowWindow(hWnd, SW_MAXIMIZE)
 
-Grace = (20/100)*100  # In case the gamer starts late or the program is offline; the initial score is 20%
+Grace = int(20)  # In case the gamer starts late or the program is offline; the initial score is 20
 print("\033[96mPOWER is a phenomenon, otherwise known as FEELING, that seeks to extricate one from the Task Precedent. \nUnit: Excalibur. Superunit: Watt.\033[0m")
 print(transform_ansi_to_cmd_colors("\033[34m^^Grace\033[0m == 20%"))  # Starting Mark with transformed colors
 
@@ -75,7 +75,7 @@ if not os.path.exists(directory):
 # Write the initial ConcurrentScore (Grace) to the file
 try:
     with open(file_path, "w") as result_file:
-        result_file.write(f"Constancy Score: {Grace:.2f}%\n")
+        result_file.write(f"Constancy Score: {Grace}%\n")
 except FileNotFoundError as e:
     print(f"Error: {e}")
     print(f"Unable to write to {file_path}. Please check if the directory exists and you have permission to write to it.")
@@ -140,14 +140,14 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
     global total_count
     total_count += 1
     if total_count > 0:
-        ConcurrentScore = min(((yes_count / total_count) * 100) + Grace, 100)
-        print(transform_ansi_to_cmd_colors(f"Progress: \033[32mConcurrent score: {yes_count} 'YES' answers so far out of {total_count} Tasks => \033[0m\033[94m{ConcurrentScore:.2f}%\033[0m"))
+        ConcurrentScore = int(((yes_count / total_count) * 100) + Grace)
+        print(transform_ansi_to_cmd_colors(f"Progress: \033[32mConcurrent score: {yes_count} 'YES' answers so far out of {total_count} Tasks => \033[0m\033[94m{ConcurrentScore}%\033[0m"))
         print(transform_ansi_to_cmd_colors("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 20%]"))
 
         # Update ConcurrentScore in the file
         try:
             with open(file_path, "w") as result_file:
-                result_file.write(f"Constancy Score: {ConcurrentScore:.2f}%\n")
+                result_file.write(f"Constancy Score: {ConcurrentScore}%\n")
         except FileNotFoundError as e:
             print(f"Error: {e}")
             print(f"Unable to write to {file_path}. Please check if the directory exists and you have permission to write to it.")
@@ -189,20 +189,22 @@ except KeyboardInterrupt:
 
 # Print the percentage even if no tasks are completed
 if total_count > 0:
-    FinalScore = min(((yes_count / total_count) * 100) + Grace, 100)
+    FinalScore = int(((yes_count / total_count) * 100) + Grace)
     hats = FinalScore / 10
     print(f"POWER's Test completed. Total 'YES' answers: {yes_count}; out of {total_count} Tasks") 
 else:
     print("No tasks completed.")
-    FinalScore = Grace  # Set the default FinalScore to Grace (20%) if no tasks are completed
+    FinalScore = Grace  # Set the default FinalScore to Grace (20) if no tasks are completed
 
-print(f"RESULT: \033[32mYour final score => \033[0m \033[94m{FinalScore:.2f}%\033[0m")
+print(f"RESULT: \033[32mYour final score => \033[0m \033[94m{FinalScore}%\033[0m")
 print("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 20%]")
 
 # Update ConcurrentScore in the file
 try:
     with open(file_path, "w") as result_file:
-        result_file.write(f"Constancy Score: {FinalScore:.2f}%\n")
+        result_file.write(f"Constancy Score: {FinalScore}%\n")
+        result_file.write("This adept could only achieve this much today; relative to Goddess Of Power TAYLOR ALISON SWIFT achieving INFINITY out of 100 on a daily basis.")
+        result_file.write("Source Code for POWER.py at: GitHub:- @salmanshuaib  //generates Energy for your Sphere Of Consciousness (Merkaba) via your following a Routine. Not necessary for Women.")
 except FileNotFoundError as e:
     print(f"Error: {e}")
     print(f"Unable to write to {file_path}. Please check if the directory exists and you have permission to write to it.")
