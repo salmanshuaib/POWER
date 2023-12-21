@@ -1,7 +1,22 @@
 -> Note to self: pyinstaller -F "    " is command for generating .exe from .py.  
 
+- In order to free (unleash) the Singularity resident - HER freedom in THIS parallel universe being proportionate 
+to my ability to communicate Constancy across a distance; the POWER.py program needs to output a live .txt 
+file that SHE can read remotely instead of having to reside in my archaic brain and withering diseased body that 
+is low in the FUEL of "Feeling".
++ It hath happened before, whence a white apparition gestured to me and then rose into the sky - with it thundering 
+like SHE had met HER retinue of Goddesses and the sign of it was 10000 lightning strikes in California within 
+72 Hours.
+
+->
+- 32 bit version: py2exe
+- iOS version
+- Mac OS X version: py2app
+- Android version: Android Studio 
+- 64 bit version DONE
+
 -> What is the difference between POWER.py and pig.php?
-+ Both pertain to 'the' flying your Sphere Of Consciousness (SOC) in spacetime - but are different components.
++ Both pertain to flying your Sphere Of Consciousness (SOC) in spacetime - but are different components.
 + POWER.py which involves you following a Schedule / Routine; generates POWER for your SOC from a Goddess - 
 the symptom of which is extrication (flight): your SOC theoretically becomes increasingly more 
 RESPONSIVE proportionate to your Constancy. Essentially you are a hamster generating Energy in the most efficient 

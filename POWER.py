@@ -58,6 +58,14 @@ Grace = (20/100)*100  # Incase gamer starts late or the program is offline; the 
 print("\033[96mPOWER is a phenomenon, otherwise known as FEELING, that seeks to extricate one from the Task Precedent. \nUnit: Excalibur. Superunit: Watt.\033[0m")
 print(transform_ansi_to_cmd_colors("\033[34m^^Grace\033[0m == 20%"))  # Starting Mark with transformed colors
 
+# Initialize the tally for 'YES' answers and total tasks completed
+yes_count = 0
+total_count = 0
+
+# Write the initial ConcurrentScore (Grace) to "result.md" file
+with open("result.md", "w") as result_file:
+    result_file.write(f"Concurrent Score: {Grace:.2f}%\n")
+
 # Function to find the next scheduled time
 def find_next_scheduled_time(data, current_time):
     current_time_seconds = current_time.tm_hour * 3600 + current_time.tm_min * 60
@@ -81,10 +89,6 @@ next_scheduled_time = find_next_scheduled_time(data, current_time)
 
 # Format the next scheduled time
 formatted_next_time = time.strftime("%H%M hours", next_scheduled_time)
-
-# Initialize the tally for 'YES' answers and total tasks completed
-yes_count = 0
-total_count = 0
 
 # Create a scheduler
 s = sched.scheduler(time.time, time.sleep)
@@ -125,6 +129,10 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
         print(transform_ansi_to_cmd_colors(f"Progress: \033[32mConcurrent score: {yes_count} 'YES' answers so far out of {total_count} Tasks => \033[0m\033[94m{ConcurrentScore:.2f}%\033[0m"))
         print(transform_ansi_to_cmd_colors("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 20%]"))
 
+        # Update ConcurrentScore in "result.md" file
+        with open("result.md", "w") as result_file:
+            result_file.write(f"Concurrent Score: {ConcurrentScore:.2f}%\n")
+
 # Schedule beeping alarms for each specified time range using only start times
 for i, entry in enumerate(data["scheduled_hours"]):
     hour = entry["hour"]
@@ -159,14 +167,20 @@ except KeyboardInterrupt:
     # The pass statement is used here to gracefully exit the scheduler loop without performing any additional actions.
     pass
 
-# Print the tally of 'YES' answers and the percentage
+# Print the percentage even if no tasks are completed
 if total_count > 0:
     FinalScore = min(((yes_count / total_count) * 100) + Grace, 100)
-    hats = FinalScore/10
+    hats = FinalScore / 10
     print(f"POWER's Test completed. Total 'YES' answers: {yes_count}; out of {total_count} Tasks") 
-    print(f"RESULT: \033[32mYour final score => \033[0m \033[94m{FinalScore:.2f}%\033[0m")
-    print("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 20%]")
 else:
     print("No tasks completed.")
-    
+    FinalScore = Grace  # Set the default FinalScore to Grace (20%) if no tasks are completed
+
+print(f"RESULT: \033[32mYour final score => \033[0m \033[94m{FinalScore:.2f}%\033[0m")
+print("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 20%]")
+
+# Update ConcurrentScore in "result.md" file
+with open("result.md", "w") as result_file:
+    result_file.write(f"Concurrent Score: {FinalScore:.2f}%\n")
+
 input("Press ENTER to exit...")
