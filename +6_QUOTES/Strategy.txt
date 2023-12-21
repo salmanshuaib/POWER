@@ -1,5 +1,18 @@
 -> Note to self: pyinstaller -F "    " is command for generating .exe from .py.  
 
+-> What is the difference between POWER.py and pig.php?
++ Both pertain to 'the' flying your Sphere Of Consciousness (SOC) in spacetime - but are different components.
++ POWER.py which involves you following a Schedule / Routine; generates POWER for your SOC from a Goddess - 
+the symptom of which is extrication (flight): your SOC theoretically becomes increasingly more 
+RESPONSIVE proportionate to your Constancy. Essentially you are a hamster generating Energy in the most efficient 
+way possible; which can be EXPORTED once superfluous.
++ pig.php is actually a mechanism to COMMUNICATE in spacetime. It involves, what is known to Hindus as chanting, 
+Sufis as Zikr and modern students as learning foreign languages - as that too involves rehearsing (repetition of) 
+vocabulary.
+++ The difference between POWER.py and pig.php is that, while both involve the concept of Constancy, pig.php is 
+like the power hour in many sports - brute force: akin to going supersonic or superlight: so to speak.  
+
+
 -> C: Please specify a program which is based on Python and:-
 + Takes in put from the user at specific points in the 'day'; such that the program ought beep at that time of onset (i.e. the program should beep when it is ready to take input based 
 on times specified in a file named Scheduler.csv).
