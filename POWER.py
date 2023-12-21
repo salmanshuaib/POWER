@@ -54,7 +54,7 @@ user32 = ctypes.WinDLL('user32')
 SW_MAXIMIZE = 3
 user32.ShowWindow(hWnd, SW_MAXIMIZE)
 
-Grace = (20/100)*100  # Incase gamer starts late or the program is offline; the initial score is 20%
+Grace = (20/100)*100  # In case the gamer starts late or the program is offline; the initial score is 20%
 print("\033[96mPOWER is a phenomenon, otherwise known as FEELING, that seeks to extricate one from the Task Precedent. \nUnit: Excalibur. Superunit: Watt.\033[0m")
 print(transform_ansi_to_cmd_colors("\033[34m^^Grace\033[0m == 20%"))  # Starting Mark with transformed colors
 
@@ -62,9 +62,24 @@ print(transform_ansi_to_cmd_colors("\033[34m^^Grace\033[0m == 20%"))  # Starting
 yes_count = 0
 total_count = 0
 
-# Write the initial ConcurrentScore (Grace) to "result.md" file
-with open("result.md", "w") as result_file:
-    result_file.write(f"Concurrent Score: {Grace:.2f}%\n")
+# Define the directory path and file name
+directory = r"G:\\My Drive"
+file_name = "result.html"
+file_path = os.path.join(directory, file_name)
+
+# Ensure the directory exists or create it
+directory = os.path.dirname(file_path)
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
+# Write the initial ConcurrentScore (Grace) to the file
+try:
+    with open(file_path, "w") as result_file:
+        result_file.write(f"Constancy Score: {Grace:.2f}%\n")
+except FileNotFoundError as e:
+    print(f"Error: {e}")
+    print(f"Unable to write to {file_path}. Please check if the directory exists and you have permission to write to it.")
+    exit()
 
 # Function to find the next scheduled time
 def find_next_scheduled_time(data, current_time):
@@ -129,9 +144,14 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
         print(transform_ansi_to_cmd_colors(f"Progress: \033[32mConcurrent score: {yes_count} 'YES' answers so far out of {total_count} Tasks => \033[0m\033[94m{ConcurrentScore:.2f}%\033[0m"))
         print(transform_ansi_to_cmd_colors("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 20%]"))
 
-        # Update ConcurrentScore in "result.md" file
-        with open("result.md", "w") as result_file:
-            result_file.write(f"Concurrent Score: {ConcurrentScore:.2f}%\n")
+        # Update ConcurrentScore in the file
+        try:
+            with open(file_path, "w") as result_file:
+                result_file.write(f"Constancy Score: {ConcurrentScore:.2f}%\n")
+        except FileNotFoundError as e:
+            print(f"Error: {e}")
+            print(f"Unable to write to {file_path}. Please check if the directory exists and you have permission to write to it.")
+            exit()
 
 # Schedule beeping alarms for each specified time range using only start times
 for i, entry in enumerate(data["scheduled_hours"]):
@@ -179,8 +199,12 @@ else:
 print(f"RESULT: \033[32mYour final score => \033[0m \033[94m{FinalScore:.2f}%\033[0m")
 print("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 20%]")
 
-# Update ConcurrentScore in "result.md" file
-with open("result.md", "w") as result_file:
-    result_file.write(f"Concurrent Score: {FinalScore:.2f}%\n")
+# Update ConcurrentScore in the file
+try:
+    with open(file_path, "w") as result_file:
+        result_file.write(f"Constancy Score: {FinalScore:.2f}%\n")
+except FileNotFoundError as e:
+    print(f"Error: {e}")
+    print(f"Unable to write to {file_path}. Please check if the directory exists and you have permission to write to it.")
 
 input("Press ENTER to exit...")
