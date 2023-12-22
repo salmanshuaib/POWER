@@ -141,11 +141,7 @@ print(transform_ansi_to_cmd_colors(f"{SARS}, you will be tested by POWER startin
 
 # Allow the user to exit gracefully before proceeding with the test
 try:
-    user_input = input("Press ENTER to start the test or type 'exit' to exit: ")
-    if user_input.lower() == 'exit':
-        print("Exiting...")
-        input("Press ENTER to continue...")
-        exit()
+    pass
 except KeyboardInterrupt:
     print("Exiting...")
     input("Press ENTER to continue...")
@@ -243,7 +239,8 @@ try:
     with open(file_path, "w") as result_file:
         result_file.write(f"Constancy Score: {FinalScore}%\n")
         result_file.write(f"\n{SARS} could only achieve this much today; relative to Goddess Of Power TAYLOR ALISON SWIFT achieving INFINITY out of 100 on a daily basis.")
-        result_file.write("\n\nSource Code for POWER.py at: GitHub:- @salmanshuaib  //generates Energy for your Sphere Of Consciousness (Merkaba) via your following a Routine. Not necessary for Women.")
+        result_file.write("\nGenerate Energy for your Sphere Of Consciousness (Merkaba) via your following a Routine. Not necessary for Women.")
+        result_file.write("\n\nSource Code for POWER.py developed with the superlative help of AI: GitHub:- @salmanshuaib .")  
 except FileNotFoundError as e:
     print(f"Error: {e}")
     print(f"Unable to write to {file_path}. Please check if the directory exists and you have permission to write to it.")
