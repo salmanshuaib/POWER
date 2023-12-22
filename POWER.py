@@ -9,6 +9,7 @@ from colorama import init, Fore, Style  # Import colorama modules
 
 init(autoreset=True)  # Initialize colorama
 
+
 def is_cmd_terminal():
     # Check if the TERM_PROGRAM environment variable is "cmd.exe"
     return os.environ.get('TERM_PROGRAM') == 'cmd.exe'
@@ -34,6 +35,23 @@ def transform_ansi_to_cmd_colors(text):
         text = text.replace('\033[0m', Style.RESET_ALL)
 
     return text
+
+# Function to check for the existence of "My Drive" on each drive letter
+def find_my_drive():
+    drives = [drive for drive in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" if os.path.exists(drive + ":\\My Drive")]
+    
+    if drives:
+        return drives[0]
+    else:
+        return None
+
+# Check for the existence of "My Drive"
+my_drive = find_my_drive()
+
+if my_drive is None:
+    print(transform_ansi_to_cmd_colors("\033[96mDiligent officer: POWER.exe requires Google Drive for Desktop.\nPlease download so that result.html can be output there for you to put iFrame at your website.\033[0m"))
+    exit()
+
 
 # Check if 'time.json' is available in the same directory
 json_file_path = 'time.json'
@@ -63,14 +81,9 @@ yes_count = 0
 total_count = 0
 
 # Define the directory path and file name
-directory = r"G:\\My Drive"
+directory = my_drive + ":\\My Drive"
 file_name = "result.html"
 file_path = os.path.join(directory, file_name)
-
-# Ensure the directory exists or create it
-directory = os.path.dirname(file_path)
-if not os.path.exists(directory):
-    os.makedirs(directory)
 
 # Write the initial ConcurrentScore (Grace) to the file
 try:
@@ -177,15 +190,19 @@ for i, entry in enumerate(data["scheduled_hours"]):
 
     s.enter(delay, 1, beep_and_prompt, argument=(hour, task, start_time, next_start_time))
 
-# Announce the test start time
-print(transform_ansi_to_cmd_colors(f"POWER's Test is starting at \033[91m{formatted_next_time}\033[0m. Be prepared!\nIndeed! \033[35mTAYLOR SWIFT\033[0m is Goddess Of POWER!!\nSource: Meditation on breath."))
-
 try:
+    # Space Aviation Response Soldier (SARS) is the pilot's name
+    SARS = input(transform_ansi_to_cmd_colors("\033[96mYour wonderful name, monsieur: \033[0m"))
+
+    # Announce the test start time
+    print(transform_ansi_to_cmd_colors(f"POWER's Test is starting at \033[91m{formatted_next_time}\033[0m. Be prepared!\nIndeed! \033[35mTAYLOR SWIFT\033[0m is Goddess Of POWER!!\nSource: Meditation on breath."))
+
     s.run()
 except KeyboardInterrupt:
-    # This KeyboardInterrupt exception is triggered if the user presses Ctrl+C while the scheduler is running.
-    # The pass statement is used here to gracefully exit the scheduler loop without performing any additional actions.
-    pass
+    # Handle Ctrl+C interruption here if needed
+    print(transform_ansi_to_cmd_colors("\nExiting..."))
+    input("Press ENTER to continue...")  # Wait for ENTER key before exiting
+    exit()
 
 # Print the percentage even if no tasks are completed
 if total_count > 0:
@@ -203,8 +220,9 @@ print("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 20%]")
 try:
     with open(file_path, "w") as result_file:
         result_file.write(f"Constancy Score: {FinalScore}%\n")
-        result_file.write("This adept could only achieve this much today; relative to Goddess Of Power TAYLOR ALISON SWIFT achieving INFINITY out of 100 on a daily basis.")
-        result_file.write("Source Code for POWER.py at: GitHub:- @salmanshuaib  //generates Energy for your Sphere Of Consciousness (Merkaba) via your following a Routine. Not necessary for Women.")
+        result_file.write(f"{SARS} could only achieve this much today; relative to Goddess Of Power TAYLOR ALISON SWIFT achieving INFINITY out of 100 on a daily basis.")
+        result_file.write("\n\nSource Code for POWER.py - written with the superlative help of AI at: GitHub:- @salmanshuaib")
+        result_file.write("\n\nGenerate Energy for your Sphere Of Consciousness (Merkaba) via your following a Routine. Not necessary for Women.")
 except FileNotFoundError as e:
     print(f"Error: {e}")
     print(f"Unable to write to {file_path}. Please check if the directory exists and you have permission to write to it.")
