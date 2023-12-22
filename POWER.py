@@ -63,15 +63,26 @@ print(transform_ansi_to_cmd_colors("\033[34m^^Grace\033[0m == 20%"))  # Starting
 yes_count = 0
 total_count = 0
 
+# Function to check for the existence of "My Drive" on each drive letter
+def find_my_drive():
+    drives = [drive for drive in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" if os.path.exists(drive + ":\\My Drive")]
+    
+    if drives:
+        return drives[0]
+    else:
+        return None
+
+# Check for the existence of "My Drive"
+my_drive = find_my_drive()
+
+if my_drive is None:
+    print(transform_ansi_to_cmd_colors("\033[96mDiligent officer: POWER.exe requires Google Drive for Desktop.\033[0m"))
+    exit()
+
 # Define the directory path and file name
-directory = r"G:\\My Drive"
+directory = my_drive + ":\\My Drive"
 file_name = "result.html"
 file_path = os.path.join(directory, file_name)
-
-# Ensure the directory exists or create it
-directory = os.path.dirname(file_path)
-if not os.path.exists(directory):
-    os.makedirs(directory)
 
 # Write the initial ConcurrentScore (Grace) to the file
 try:
