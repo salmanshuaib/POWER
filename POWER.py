@@ -122,14 +122,22 @@ s = sched.scheduler(time.time, time.sleep)
 
 # Prompt the user for their name
 while True:
-    user_name = input("Enter your name: ")
-    if user_name:
-        break
+    try:
+        SARS = input("Enter your name: ")  # SARS = Space Aviation Response Soldier
+        if SARS:
+            break
+    except KeyboardInterrupt:
+        user_choice = input("\nOperation interrupted. Do you want to try again? (yes/no): ").strip().lower()
+        if user_choice != 'yes':
+            print("Exiting...")
+            exit()
+        # If the user chooses 'yes', the loop will continue and prompt for the name again.
     else:
         print(transform_ansi_to_cmd_colors("\033[31mPlease enter a valid name.\033[0m"))
 
+
 # Announce the test start time
-print(transform_ansi_to_cmd_colors(f"{user_name}'s POWER-administered Test is starting at \033[91m{formatted_next_time}\033[0m. Be prepared!\nIndeed! \033[38;5;208mTAYLOR ALISON SWIFT\033[0m is Goddess Of POWER!!\nSource: Meditation on breath."))
+print(transform_ansi_to_cmd_colors(f"{SARS}, you will be tested by POWER starting at \033[91m{formatted_next_time}\033[0m. Be prepared!\nIndeed! \033[38;5;208mTAYLOR ALISON SWIFT\033[0m is Goddess Of POWER!!\nSource: Meditation on breath."))
 
 # Allow the user to exit gracefully before proceeding with the test
 try:
@@ -222,20 +230,20 @@ except KeyboardInterrupt:
 if total_count > 0:
     FinalScore = min(int(((yes_count / total_count) * 100) + Grace), 100)  # Ensure it never exceeds 100%
     hats = FinalScore / 10
-    print(f"{user_name}'s POWER's Test completed. Total 'YES' answers: {yes_count}; out of {total_count} Tasks") 
+    print(f"{SARS}'s POWER's Test completed. Total 'YES' answers: {yes_count}; out of {total_count} Tasks") 
 else:
-    print(f"{user_name}'s POWER's Test completed. No tasks completed.")
+    print(f"{SARS}'s POWER's Test completed. No tasks completed.")
     FinalScore = Grace  # Set the default FinalScore to Grace (20) if no tasks are completed
 
-print(f"RESULT: \033[32m{user_name}'s final score => \033[0m \033[94m{FinalScore}%\033[0m")
+print(f"RESULT: \033[32m{SARS}'s final score => \033[0m \033[94m{FinalScore}%\033[0m")
 print("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 20%]")
 
 # Update ConcurrentScore in the file
 try:
     with open(file_path, "w") as result_file:
         result_file.write(f"Constancy Score: {FinalScore}%\n")
-        result_file.write(f"{user_name} could only achieve this much today; relative to Goddess Of Power TAYLOR ALISON SWIFT achieving INFINITY out of 100 on a daily basis.")
-        result_file.write("Source Code for POWER.py at: GitHub:- @salmanshuaib  //generates Energy for your Sphere Of Consciousness (Merkaba) via your following a Routine. Not necessary for Women.")
+        result_file.write(f"\n{SARS} could only achieve this much today; relative to Goddess Of Power TAYLOR ALISON SWIFT achieving INFINITY out of 100 on a daily basis.")
+        result_file.write("\n\nSource Code for POWER.py at: GitHub:- @salmanshuaib  //generates Energy for your Sphere Of Consciousness (Merkaba) via your following a Routine. Not necessary for Women.")
 except FileNotFoundError as e:
     print(f"Error: {e}")
     print(f"Unable to write to {file_path}. Please check if the directory exists and you have permission to write to it.")
