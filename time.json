@@ -2,7 +2,7 @@
 "scheduled_hours": [
 {
 "hour": "1",
-"time_range": "0023 hours",
+"time_range": "0329 hours",
 "task": "Trim head, cut nails, grooming"
 },  
 {
@@ -22,7 +22,7 @@
 } ,
 {
 "hour": "5",
-"time_range": "0521 hours",
+"time_range": "0043 hours",
 "task": "Shave face"
 },
 {
