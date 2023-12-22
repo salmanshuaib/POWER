@@ -84,14 +84,16 @@ directory = my_drive + ":\\My Drive"
 file_name = "result.html"
 file_path = os.path.join(directory, file_name)
 
+
 # Write the initial ConcurrentScore (Grace) to the file
-try:
+'''try:
     with open(file_path, "w") as result_file:
         result_file.write(f"Constancy Score: {Grace}%\n")
 except FileNotFoundError as e:
     print(f"Error: {e}")
     print(f"Unable to write to {file_path}. Please check if the directory exists and you have permission to write to it.")
     exit()
+'''
 
 # Function to find the next scheduled time
 def find_next_scheduled_time(data, current_time):
@@ -123,15 +125,11 @@ s = sched.scheduler(time.time, time.sleep)
 # Prompt the user for their name
 while True:
     try:
-        SARS = input("Enter your name: ")  # SARS = Space Aviation Response Soldier
+        SARS = input("\033[32mEnter your name: \033[0m")  # SARS = Space Aviation Response Soldier
         if SARS:
             break
     except KeyboardInterrupt:
-        user_choice = input("\nOperation interrupted. Do you want to try again? (yes/no): ").strip().lower()
-        if user_choice != 'yes':
-            print("Exiting...")
-            exit()
-        # If the user chooses 'yes', the loop will continue and prompt for the name again.
+        exit()
     else:
         print(transform_ansi_to_cmd_colors("\033[31mPlease enter a valid name.\033[0m"))
 
@@ -183,14 +181,14 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
         print(transform_ansi_to_cmd_colors(f"Progress: \033[32mConcurrent score: {yes_count} 'YES' answers so far out of {total_count} Tasks => \033[0m\033[94m{ConcurrentScore}%\033[0m"))
         print(transform_ansi_to_cmd_colors("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 20%]"))
 
-        # Update ConcurrentScore in the file
+'''        # Update ConcurrentScore in the file
         try:
             with open(file_path, "w") as result_file:
                 result_file.write(f"Constancy Score: {ConcurrentScore}%\n")
         except FileNotFoundError as e:
             print(f"Error: {e}")
             print(f"Unable to write to {file_path}. Please check if the directory exists and you have permission to write to it.")
-
+'''
 # Schedule beeping alarms for each specified time range using only start times
 for i, entry in enumerate(data["scheduled_hours"]):
     hour = entry["hour"]
@@ -239,7 +237,7 @@ try:
     with open(file_path, "w") as result_file:
         result_file.write(f"Constancy Score: {FinalScore}%\n")
         result_file.write(f"\n{SARS} could only achieve this much today; relative to Goddess Of Power TAYLOR ALISON SWIFT achieving INFINITY out of 100 on a daily basis.")
-        result_file.write("\nGenerate Energy for your Sphere Of Consciousness (Merkaba) via your following a Routine. Not necessary for Women.")
+        result_file.write("\n\nPOWER.exe generates Energy for your Sphere Of Consciousness (Merkaba) via your following a Routine. Not necessary for Women.")
         result_file.write("\n\nSource Code for POWER.py developed with the superlative help of AI: GitHub:- @salmanshuaib .")  
 except FileNotFoundError as e:
     print(f"Error: {e}")
