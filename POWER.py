@@ -85,17 +85,6 @@ directory = my_drive + ":\\My Drive"
 file_name = "result.html"
 file_path = os.path.join(directory, file_name)
 
-
-# Write the initial ConcurrentScore (Grace) to the file
-'''try:
-    with open(file_path, "w") as result_file:
-        result_file.write(f"Constancy Score: {Grace}%\n")
-except FileNotFoundError as e:
-    print(f"Error: {e}")
-    print(f"Unable to write to {file_path}. Please check if the directory exists and you have permission to write to it.")
-    exit()
-'''
-
 # Function to find the next scheduled time
 def find_next_scheduled_time(data, current_time):
     current_time_seconds = current_time.tm_hour * 3600 + current_time.tm_min * 60
@@ -130,7 +119,7 @@ while True:
         if SARS:
             break
     except KeyboardInterrupt:
-        exit()
+        sys.exit()
     else:
         print(transform_ansi_to_cmd_colors("\033[31mPlease enter a valid name.\033[0m"))
 
@@ -144,7 +133,7 @@ try:
 except KeyboardInterrupt:
     print("Exiting...")
     input("Press ENTER to continue...")
-    exit()
+    sys.exit()
 
 # Define a function to beep and prompt the user
 def beep_and_prompt(hour, task, start_time=None, next_time=None):
@@ -173,7 +162,7 @@ def beep_and_prompt(hour, task, start_time=None, next_time=None):
             # It prints a message and then uses the exit() function to terminate the script execution.
             print(transform_ansi_to_cmd_colors("\nExiting..."))
             input("Press ENTER to continue...")  # Wait for ENTER key before exiting
-            exit()
+            sys.exit()
 
     global total_count
     total_count += 1
