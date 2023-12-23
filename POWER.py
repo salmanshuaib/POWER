@@ -1,3 +1,4 @@
+import sys
 import json
 import sched
 import time
@@ -39,8 +40,8 @@ def transform_ansi_to_cmd_colors(text):
 # Check if 'time.json' is available in the same directory
 json_file_path = 'time.json'
 if not os.path.exists(json_file_path):
-    print(transform_ansi_to_cmd_colors("\033[96mDiligent officer: POWER.exe requires time.json file in the same directory.\nPlease retrieve this file from FlowerEconomics.com/Downloads\033[0m"))
-    exit()
+    print(transform_ansi_to_cmd_colors("\033[31mDiligent officer: POWER.exe requires time.json file in the same directory.\nPlease retrieve this file from FlowerEconomics.com/Downloads\033[0m"))
+    sys.exit()
 
 # Load the JSON data from the 'time.json' file
 with open('time.json', 'r') as json_file:
@@ -76,8 +77,8 @@ def find_my_drive():
 my_drive = find_my_drive()
 
 if my_drive is None:
-    print(transform_ansi_to_cmd_colors("\033[96mDiligent officer: POWER.exe requires Google Drive for Desktop.\033[0m"))
-    exit()
+    print(transform_ansi_to_cmd_colors("\033[31mDiligent officer: POWER.exe requires Google Drive for Desktop.\033[0m"))
+    sys.exit()
 
 # Define the directory path and file name
 directory = my_drive + ":\\My Drive"
@@ -234,16 +235,4 @@ else:
 
 print(f"RESULT: \033[32m{SARS}'s final score => \033[0m \033[94m{FinalScore}%\033[0m")
 print("(FORMULA: [{(Tasks Completed / Total Tasks)*100} + 20%]")
-'''
-# Update ConcurrentScore in the file
-try:
-    with open(file_path, "w") as result_file:
-        result_file.write(f"Constancy Score: {FinalScore}%\n")
-        result_file.write(f"\n{SARS} could only achieve this much today; relative to Goddess Of Power TAYLOR ALISON SWIFT achieving INFINITY out of 100 on a daily basis.")
-        result_file.write("\n\nPOWER.exe generates Energy for your Sphere Of Consciousness (Merkaba) via your following a Routine. Not necessary for Women.")
-        result_file.write("\n\nSource Code for POWER.py developed with the superlative help of AI: GitHub:- @salmanshuaib .")  
-except FileNotFoundError as e:
-    print(f"Error: {e}")
-    print(f"Unable to write to {file_path}. Please check if the directory exists and you have permission to write to it.")
-'''
 input("Press ENTER to exit...")
